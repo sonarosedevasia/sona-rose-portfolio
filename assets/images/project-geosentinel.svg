@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360">
+  <defs>
+    <linearGradient id="iotBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1610" />
+      <stop offset="100%" stop-color="#14241B" />
+    </linearGradient>
+    <linearGradient id="loraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="warnGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+    <linearGradient id="alertGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EF4444" />
+      <stop offset="100%" stop-color="#B91C1C" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="600" height="360" fill="url(#iotBg)" rx="12" />
+
+  <!-- Blueprint RF Waveform Grid -->
+  <g opacity="0.06" stroke="#10B981" stroke-width="1">
+    <line x1="0" y1="60" x2="600" y2="60" />
+    <line x1="0" y1="120" x2="600" y2="120" />
+    <line x1="0" y1="180" x2="600" y2="180" />
+    <line x1="0" y1="240" x2="600" y2="240" />
+    <line x1="0" y1="300" x2="600" y2="300" />
+    <line x1="120" y1="0" x2="120" y2="360" />
+    <line x1="240" y1="0" x2="240" y2="360" />
+    <line x1="360" y1="0" x2="360" y2="360" />
+    <line x1="480" y1="0" x2="480" y2="360" />
+  </g>
+
+  <!-- Main Application Container -->
+  <rect x="28" y="22" width="544" height="316" rx="10" fill="#0E1E15" stroke="rgba(16, 185, 129, 0.28)" stroke-width="1.5" />
+
+  <!-- Top Window Header -->
+  <rect x="28" y="22" width="544" height="38" rx="10" fill="#08120C" />
+  <circle cx="50" cy="41" r="5" fill="#EF4444" />
+  <circle cx="66" cy="41" r="5" fill="#F59E0B" />
+  <circle cx="82" cy="41" r="5" fill="#10B981" />
+  <text x="106" y="45" fill="#E2E8F0" font-family="'Plus Jakarta Sans', sans-serif" font-size="11.5" font-weight="600">📡 GeoSentinel — LoRa Landslide Early Warning System</text>
+  <rect x="420" y="31" width="140" height="20" rx="4" fill="rgba(16, 185, 129, 0.2)" />
+  <text x="430" y="45" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="10">ESP32 • SX1278 • 433MHz</text>
+
+  <!-- Section 1: Field Transmitter Unit (Left) -->
+  <g transform="translate(44, 72)">
+    <rect x="0" y="0" width="160" height="248" rx="8" fill="#16291E" stroke="rgba(255,255,255,0.06)" />
+    <text x="12" y="22" fill="#F8FAFC" font-family="sans-serif" font-size="11" font-weight="700">Field Transmitter Unit</text>
+    <text x="12" y="36" fill="#A7F3D0" font-family="sans-serif" font-size="8.5">ESP32 + Sensors (Battery)</text>
+
+    <!-- Rain Sensor -->
+    <rect x="12" y="48" width="136" height="52" rx="6" fill="#0C1710" stroke="rgba(56, 189, 248, 0.35)" />
+    <text x="20" y="67" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700">🌧️ Rain Sensor</text>
+    <text x="20" y="81" fill="#94A3B8" font-family="sans-serif" font-size="8.5">Level: Heavy Rainfall</text>
+    <text x="20" y="93" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="8">Threshold: &gt; 80mm/h</text>
+
+    <!-- Soil Moisture Sensor -->
+    <rect x="12" y="108" width="136" height="52" rx="6" fill="#0C1710" stroke="rgba(245, 158, 11, 0.35)" />
+    <text x="20" y="127" fill="#FBBF24" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700">🌱 Soil Moisture</text>
+    <text x="20" y="141" fill="#94A3B8" font-family="sans-serif" font-size="8.5">Saturation: High (88%)</text>
+    <text x="20" y="153" fill="#FBBF24" font-family="'JetBrains Mono', monospace" font-size="8">Critical Slip Risk</text>
+
+    <!-- Transmitter ESP32 & SX1278 -->
+    <rect x="12" y="168" width="136" height="68" rx="6" fill="#0C1710" stroke="rgba(16, 185, 129, 0.4)" />
+    <text x="20" y="187" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700">ESP32 Edge MCU</text>
+    <text x="20" y="201" fill="#A7F3D0" font-family="sans-serif" font-size="8.5">SX1278 LoRa Module (SPI)</text>
+    <text x="20" y="214" fill="#6EE7B7" font-family="'JetBrains Mono', monospace" font-size="8">Freq: 433MHz • DIO0 ISR</text>
+    <text x="20" y="227" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="8">Status: Transmitting Telemetry</text>
+  </g>
+
+  <!-- Section 2: LoRa RF Telemetry Link (Center) -->
+  <g transform="translate(216, 72)">
+    <rect x="0" y="0" width="168" height="248" rx="8" fill="#13241A" stroke="rgba(255,255,255,0.06)" />
+    <text x="14" y="22" fill="#F8FAFC" font-family="sans-serif" font-size="11" font-weight="700">Wireless Telemetry</text>
+    <text x="14" y="36" fill="#6EE7B7" font-family="sans-serif" font-size="8.5">Long-Range RF Channel</text>
+
+    <!-- RF Waveform Animation Box -->
+    <rect x="12" y="48" width="144" height="64" rx="6" fill="#0A140E" stroke="rgba(16, 185, 129, 0.25)" />
+    <path d="M 22 80 Q 32 60 42 80 T 62 80 T 82 80 T 102 80 T 122 80 T 142 80" fill="none" stroke="#10B981" stroke-width="2" />
+    <text x="40" y="103" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700">LoRa 433 MHz Carrier</text>
+
+    <!-- Telemetry Packet Payload -->
+    <rect x="12" y="122" width="144" height="68" rx="6" fill="#0A140E" stroke="rgba(255,255,255,0.08)" />
+    <text x="20" y="139" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="8.5">Payload [SPI Buffer]:</text>
+    <text x="20" y="153" fill="#E2E8F0" font-family="'JetBrains Mono', monospace" font-size="9">{ Node: #01,</text>
+    <text x="20" y="166" fill="#FBBF24" font-family="'JetBrains Mono', monospace" font-size="9">  Rain: "Heavy",</text>
+    <text x="20" y="179" fill="#F87171" font-family="'JetBrains Mono', monospace" font-size="9">  Soil: 88%, Alert: 1 }</text>
+
+    <!-- Range & Performance Metrics -->
+    <rect x="12" y="198" width="144" height="38" rx="4" fill="url(#loraGrad)" />
+    <text x="22" y="213" fill="#FFFFFF" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700">Long-Range Signal</text>
+    <text x="22" y="226" fill="#A7F3D0" font-family="sans-serif" font-size="8">RSSI: -82 dBm • SNR: +9 dB</text>
+  </g>
+
+  <!-- Section 3: Base Station Receiver & Early Warning (Right) -->
+  <g transform="translate(396, 72)">
+    <rect x="0" y="0" width="160" height="248" rx="8" fill="#16291E" stroke="rgba(255,255,255,0.06)" />
+    <text x="12" y="22" fill="#F8FAFC" font-family="sans-serif" font-size="11" font-weight="700">Base Station Receiver</text>
+    <text x="12" y="36" fill="#A7F3D0" font-family="sans-serif" font-size="8.5">Risk Analysis &amp; Dashboard</text>
+
+    <!-- Risk Level Alert Banner -->
+    <rect x="12" y="48" width="136" height="48" rx="6" fill="url(#alertGrad)" />
+    <text x="20" y="68" fill="#FFFFFF" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700">⚠️ RISK: CRITICAL</text>
+    <text x="20" y="85" fill="#FEE2E2" font-family="sans-serif" font-size="8.5">Potential Landslide Imminent</text>
+
+    <!-- Audible Buzzer Alarm -->
+    <rect x="12" y="104" width="136" height="42" rx="6" fill="#0C1710" stroke="rgba(239, 68, 68, 0.4)" />
+    <text x="20" y="121" fill="#F87171" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700">🔔 Local Buzzer: ON</text>
+    <text x="20" y="136" fill="#94A3B8" font-family="sans-serif" font-size="8.5">GPIO 25 High • 85 dB Alarm</text>
+
+    <!-- Monitoring Dashboard -->
+    <rect x="12" y="154" width="136" height="82" rx="6" fill="#0C1710" stroke="rgba(56, 189, 248, 0.3)" />
+    <text x="20" y="172" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700">Live Dashboard</text>
+    <text x="20" y="188" fill="#E2E8F0" font-family="sans-serif" font-size="8.5">• Real-time Risk Assessment</text>
+    <text x="20" y="202" fill="#E2E8F0" font-family="sans-serif" font-size="8.5">• Threshold History Logs</text>
+    <text x="20" y="216" fill="#34D399" font-family="sans-serif" font-size="8.5">• Edge Telemetry Validated</text>
+    <text x="20" y="228" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="7.5">Base ESP32 Listening...</text>
+  </g>
+</svg>

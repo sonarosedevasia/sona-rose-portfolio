@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360">
+  <defs>
+    <linearGradient id="nutriBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1319" />
+      <stop offset="100%" stop-color="#0f231e" />
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <linearGradient id="amberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#ef4444" />
+    </linearGradient>
+    <filter id="glowGreen" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="600" height="360" fill="url(#nutriBg)" rx="12" />
+
+  <!-- Subtle Blueprint Grid -->
+  <g opacity="0.06" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="60" x2="600" y2="60" />
+    <line x1="0" y1="120" x2="600" y2="120" />
+    <line x1="0" y1="180" x2="600" y2="180" />
+    <line x1="0" y1="240" x2="600" y2="240" />
+    <line x1="0" y1="300" x2="600" y2="300" />
+    <line x1="120" y1="0" x2="120" y2="360" />
+    <line x1="240" y1="0" x2="240" y2="360" />
+    <line x1="360" y1="0" x2="360" y2="360" />
+    <line x1="480" y1="0" x2="480" y2="360" />
+  </g>
+
+  <!-- Browser / App Frame -->
+  <rect x="35" y="25" width="530" height="310" rx="10" fill="#111c19" stroke="rgba(16, 185, 129, 0.25)" stroke-width="1.5" />
+
+  <!-- Top App Bar -->
+  <rect x="35" y="25" width="530" height="38" rx="10" fill="#0c1613" />
+  <circle cx="58" cy="44" r="5" fill="#ef4444" />
+  <circle cx="74" cy="44" r="5" fill="#f59e0b" />
+  <circle cx="90" cy="44" r="5" fill="#10b981" />
+  <text x="115" y="48" fill="#a7f3d0" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">Nutrition Assistant &#8226; Grocery Store Platform</text>
+  <rect x="420" y="34" width="130" height="20" rx="4" fill="rgba(16, 185, 129, 0.2)" />
+  <text x="432" y="48" fill="#34d399" font-family="'JetBrains Mono', monospace" font-size="10">FastAPI + SQLite</text>
+
+  <!-- Left: Cart & Items Panel -->
+  <rect x="52" y="78" width="235" height="240" rx="8" fill="#142420" stroke="rgba(255,255,255,0.06)" />
+  <text x="68" y="102" fill="#e2e8f0" font-family="sans-serif" font-size="12" font-weight="700">🛒 Active Shopping Cart (3 items)</text>
+  
+  <!-- Item 1 -->
+  <rect x="66" y="115" width="207" height="42" rx="6" fill="#0d1815" />
+  <text x="76" y="133" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="600">Organic Whole Milk</text>
+  <text x="76" y="147" fill="#94a3b8" font-family="sans-serif" font-size="9.5">1L &#8226; Protein: 8g, Calcium: 30%</text>
+  <text x="235" y="137" fill="#34d399" font-family="sans-serif" font-size="11" font-weight="700">$3.49</text>
+
+  <!-- Item 2 -->
+  <rect x="66" y="165" width="207" height="42" rx="6" fill="#0d1815" />
+  <text x="76" y="183" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="600">Brown Bread &amp; Eggs</text>
+  <text x="76" y="197" fill="#94a3b8" font-family="sans-serif" font-size="9.5">Carbs: 24g, Protein: 12g</text>
+  <text x="235" y="187" fill="#34d399" font-family="sans-serif" font-size="11" font-weight="700">$4.20</text>
+
+  <!-- Item 3 -->
+  <rect x="66" y="215" width="207" height="42" rx="6" fill="#0d1815" />
+  <text x="76" y="233" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="600">Greek Yogurt</text>
+  <text x="76" y="247" fill="#94a3b8" font-family="sans-serif" font-size="9.5">Protein: 15g &#8226; Probiotics</text>
+  <text x="235" y="237" fill="#34d399" font-family="sans-serif" font-size="11" font-weight="700">$2.99</text>
+
+  <!-- Cart Total -->
+  <line x1="66" y1="268" x2="273" y2="268" stroke="rgba(255,255,255,0.1)" />
+  <text x="76" y="285" fill="#94a3b8" font-family="sans-serif" font-size="11">Total: $10.68</text>
+  <rect x="180" y="272" width="93" height="24" rx="4" fill="url(#greenGrad)" />
+  <text x="195" y="288" fill="#061f18" font-family="sans-serif" font-size="10.5" font-weight="700">Checkout</text>
+
+  <!-- Right: Nutrition Gap Analysis Engine -->
+  <rect x="299" y="78" width="250" height="240" rx="8" fill="#142420" stroke="rgba(16, 185, 129, 0.2)" />
+  <text x="315" y="102" fill="#34d399" font-family="sans-serif" font-size="12" font-weight="700">🥗 Nutrition Analysis Engine</text>
+  <text x="315" y="117" fill="#94a3b8" font-family="sans-serif" font-size="9.5">Calculated against Balanced Daily Profile (RDA)</text>
+
+  <!-- Gap Bars -->
+  <!-- Protein -->
+  <text x="315" y="137" fill="#cbd5e1" font-family="sans-serif" font-size="10">Protein: 35g / 50g (70%)</text>
+  <rect x="315" y="142" width="218" height="6" rx="3" fill="#0d1815" />
+  <rect x="315" y="142" width="152" height="6" rx="3" fill="#34d399" />
+
+  <!-- Dietary Fiber (Gap detected) -->
+  <text x="315" y="165" fill="#f87171" font-family="sans-serif" font-size="10">Dietary Fiber: 6g / 28g (21% &#8226; Deficit!)</text>
+  <rect x="315" y="170" width="218" height="6" rx="3" fill="#0d1815" />
+  <rect x="315" y="170" width="46" height="6" rx="3" fill="#ef4444" />
+
+  <!-- Vitamin C (Gap detected) -->
+  <text x="315" y="193" fill="#fbbf24" font-family="sans-serif" font-size="10">Vitamin C: 18mg / 75mg (24% &#8226; Low)</text>
+  <rect x="315" y="198" width="218" height="6" rx="3" fill="#0d1815" />
+  <rect x="315" y="198" width="52" height="6" rx="3" fill="#f59e0b" />
+
+  <!-- Recommendation Callout Box -->
+  <rect x="313" y="215" width="222" height="92" rx="6" fill="#0b1814" stroke="rgba(16,185,129,0.3)" />
+  <text x="323" y="233" fill="#a7f3d0" font-family="sans-serif" font-size="10" font-weight="700">💡 Recommended to bridge gaps:</text>
+  
+  <text x="325" y="252" fill="#ffffff" font-family="sans-serif" font-size="9.5">&#8226; <tspan font-weight="700">Fresh Baby Spinach</tspan> (+Fiber, Vit C)</text>
+  <rect x="475" y="240" width="50" height="16" rx="3" fill="rgba(16,185,129,0.25)" />
+  <text x="483" y="252" fill="#34d399" font-family="sans-serif" font-size="9">+ Add $1.49</text>
+
+  <text x="325" y="274" fill="#ffffff" font-family="sans-serif" font-size="9.5">&#8226; <tspan font-weight="700">Chia Seeds / Almonds</tspan> (+Fiber, Protein)</text>
+  <rect x="475" y="262" width="50" height="16" rx="3" fill="rgba(16,185,129,0.25)" />
+  <text x="483" y="274" fill="#34d399" font-family="sans-serif" font-size="9">+ Add $2.20</text>
+
+  <text x="323" y="297" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="8.5">Cart deficit resolved by +68%</text>
+</svg>

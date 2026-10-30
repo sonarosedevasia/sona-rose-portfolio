@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="100%" height="100%">
+  <rect width="600" height="360" fill="#080c14" rx="12" />
+  <rect x="30" y="25" width="540" height="310" rx="10" fill="#0d1117" stroke="rgba(255,255,255,0.08)" />
+  <rect x="30" y="25" width="540" height="36" rx="10" fill="#070a0e" />
+  <circle cx="50" cy="43" r="4.5" fill="#ef4444" />
+  <circle cx="65" cy="43" r="4.5" fill="#f59e0b" />
+  <circle cx="80" cy="43" r="4.5" fill="#10b981" />
+  <text x="105" y="47" fill="#38bdf8" font-family="monospace" font-size="11">sona@kernel-core: ~/minishell-posix</text>
+
+  <!-- Terminal Content -->
+  <g transform="translate(50, 80)" font-family="monospace" font-size="11">
+    <text x="0" y="20" fill="#94a3b8">sona@linux:~/src$ <tspan fill="#f8fafc">gcc -Wall -Wextra -pthread minishell.c -o minishell</tspan></text>
+    <text x="0" y="45" fill="#94a3b8">sona@linux:~/src$ <tspan fill="#f8fafc">./minishell</tspan></text>
+    <text x="0" y="70" fill="#10b981">minishell [pid: 40822]&gt; <tspan fill="#f8fafc">cat log.txt | grep ERROR | wc -l &amp;</tspan></text>
+    <text x="0" y="95" fill="#38bdf8">[1] Forked Child PID 40823 (Pipeline: 3 stages)</text>
+    <text x="0" y="120" fill="#94a3b8">minishell [pid: 40822]&gt; <tspan fill="#f8fafc">sched --algo=round-robin --quantum=10ms</tspan></text>
+    
+    <!-- Scheduler status box -->
+    <rect x="0" y="140" width="500" height="75" rx="6" fill="#111827" stroke="rgba(56, 189, 248, 0.2)" />
+    <text x="15" y="165" fill="#38bdf8">QUEUE 0 [Running]: PID 40823 | TimeSlice: 10ms | Context Switches: 42</text>
+    <text x="15" y="185" fill="#a5b4fc">QUEUE 1 [Ready]  : PID 40824 | Priority: High  | Nice: -5</text>
+    <text x="15" y="205" fill="#34d399">Valgrind Status  : 0 errors from 0 contexts (suppressed: 0)</text>
+  </g>
+</svg>

@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="infraBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="50%" stop-color="#0e1726" />
+      <stop offset="100%" stop-color="#070a12" />
+    </linearGradient>
+
+    <!-- Card Background Gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#141e33" />
+      <stop offset="100%" stop-color="#0e1626" />
+    </linearGradient>
+
+    <!-- Red Alert Fill & Line Gradients -->
+    <linearGradient id="cpuAreaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.55" />
+      <stop offset="70%" stop-color="#ef4444" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#ef4444" stop-opacity="0.0" />
+    </linearGradient>
+
+    <linearGradient id="cpuLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="60%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#dc2626" />
+    </linearGradient>
+
+    <!-- RAM Line & Area Gradients -->
+    <linearGradient id="ramAreaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.4" />
+      <stop offset="70%" stop-color="#06b6d4" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.0" />
+    </linearGradient>
+
+    <linearGradient id="ramLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="50%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#22d3ee" />
+    </linearGradient>
+
+    <!-- Alert Glow Filter -->
+    <filter id="redGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Base Canvas -->
+  <rect width="600" height="360" fill="url(#infraBg)" rx="12" />
+
+  <!-- Outer Dashboard Window Frame -->
+  <rect x="18" y="14" width="564" height="332" rx="10" fill="#0d1322" stroke="rgba(255,255,255,0.08)" stroke-width="1.2" />
+
+  <!-- Window Header / Title Bar -->
+  <rect x="18" y="14" width="564" height="34" rx="10" fill="#090d17" />
+  <circle cx="36" cy="31" r="4.5" fill="#ef4444" />
+  <circle cx="50" cy="31" r="4.5" fill="#f59e0b" />
+  <circle cx="64" cy="31" r="4.5" fill="#10b981" />
+  <text x="86" y="35" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="600">Infrastructure Monitor // Live WebSocket Stream (psutil ➔ FastAPI ➔ React)</text>
+  
+  <!-- Live WebSocket Connected Pill -->
+  <rect x="448" y="22" width="122" height="19" rx="9.5" fill="rgba(16, 185, 129, 0.15)" stroke="rgba(16, 185, 129, 0.4)" stroke-width="1" />
+  <circle cx="459" cy="31.5" r="3.5" fill="#10b981" />
+  <text x="468" y="35" fill="#34d399" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700">WS CONNECTED (1s)</text>
+
+  <!-- High CPU Load Alert Banner (Feature: Automatic Red Alert Banner when CPU > 80%) -->
+  <g transform="translate(30, 56)">
+    <rect x="0" y="0" width="540" height="26" rx="5" fill="rgba(239, 68, 68, 0.14)" stroke="rgba(239, 68, 68, 0.55)" stroke-width="1" />
+    <circle cx="16" cy="13" r="4" fill="#ef4444" filter="url(#redGlow)" />
+    <text x="28" y="16.5" fill="#fca5a5" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700">CRITICAL ALERT: CPU Usage at 84.2% exceeds 80% threshold</text>
+    <rect x="424" y="4" width="106" height="18" rx="3" fill="#dc2626" />
+    <text x="432" y="16.5" fill="#ffffff" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700">TRIGGER ACTIVE</text>
+  </g>
+
+  <!-- 4 Real-Time Stat Cards -->
+  <g transform="translate(30, 90)">
+    <!-- 1. CPU Usage Card (In Alert State) -->
+    <rect x="0" y="0" width="128" height="64" rx="6" fill="url(#cardGrad)" stroke="#ef4444" stroke-width="1.2" />
+    <rect x="0" y="0" width="128" height="3" rx="1.5" fill="#ef4444" />
+    <text x="10" y="17" fill="#fca5a5" font-family="sans-serif" font-size="9.5" font-weight="600">⚡ CPU USAGE</text>
+    <text x="10" y="42" fill="#ef4444" font-family="'JetBrains Mono', monospace" font-size="19" font-weight="800">84.2%</text>
+    <text x="10" y="55" fill="#ef4444" font-family="'JetBrains Mono', monospace" font-size="8.5">▲ +14% vs avg</text>
+
+    <!-- 2. RAM Usage Card -->
+    <rect x="137" y="0" width="128" height="64" rx="6" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    <rect x="137" y="0" width="128" height="3" rx="1.5" fill="#06b6d4" />
+    <text x="147" y="17" fill="#94a3b8" font-family="sans-serif" font-size="9.5" font-weight="600">🧠 RAM USAGE</text>
+    <text x="147" y="42" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="19" font-weight="800">58.6%</text>
+    <text x="147" y="55" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="8.5">9.38 GB / 16 GB</text>
+
+    <!-- 3. Disk Usage Card -->
+    <rect x="274" y="0" width="128" height="64" rx="6" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    <rect x="274" y="0" width="128" height="3" rx="1.5" fill="#10b981" />
+    <text x="284" y="17" fill="#94a3b8" font-family="sans-serif" font-size="9.5" font-weight="600">💾 DISK USAGE</text>
+    <text x="284" y="42" fill="#34d399" font-family="'JetBrains Mono', monospace" font-size="19" font-weight="800">42.1%</text>
+    <text x="284" y="55" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="8.5">215 GB / 512 GB</text>
+
+    <!-- 4. System Uptime Card -->
+    <rect x="411" y="0" width="129" height="64" rx="6" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    <rect x="411" y="0" width="129" height="3" rx="1.5" fill="#a855f7" />
+    <text x="421" y="17" fill="#94a3b8" font-family="sans-serif" font-size="9.5" font-weight="600">⏱️ SYSTEM UPTIME</text>
+    <text x="421" y="42" fill="#c084fc" font-family="'JetBrains Mono', monospace" font-size="14.5" font-weight="800">14d 06h 32m</text>
+    <text x="421" y="55" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="8.5">● 100% Avail (0 drops)</text>
+  </g>
+
+  <!-- Recharts Live Visualizer Container -->
+  <g transform="translate(30, 164)">
+    <rect x="0" y="0" width="540" height="142" rx="6" fill="#090e1a" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+    
+    <!-- Graph Header & Legends -->
+    <text x="14" y="18" fill="#f8fafc" font-family="sans-serif" font-size="11" font-weight="700">Live Recharts Telemetry (1s Ingestion Interval)</text>
+    
+    <!-- Legend Item: CPU -->
+    <line x1="330" y1="14" x2="344" y2="14" stroke="#ef4444" stroke-width="2.5" />
+    <circle cx="337" cy="14" r="2.5" fill="#ef4444" />
+    <text x="349" y="17" fill="#fca5a5" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600">CPU %</text>
+
+    <!-- Legend Item: RAM -->
+    <line x1="410" y1="14" x2="424" y2="14" stroke="#06b6d4" stroke-width="2.5" />
+    <circle cx="417" cy="14" r="2.5" fill="#06b6d4" />
+    <text x="429" y="17" fill="#67e8f9" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600">RAM %</text>
+
+    <!-- 80% Threshold Marker Line -->
+    <text x="495" y="17" fill="#f87171" font-family="'JetBrains Mono', monospace" font-size="8.5">-- 80% Cap</text>
+
+    <!-- Grid Lines -->
+    <line x1="35" y1="36" x2="525" y2="36" stroke="rgba(239,68,68,0.25)" stroke-width="1" stroke-dasharray="3 3" />
+    <text x="12" y="39" fill="#f87171" font-family="'JetBrains Mono', monospace" font-size="8">80%</text>
+
+    <line x1="35" y1="64" x2="525" y2="64" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+    <text x="12" y="67" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="8">60%</text>
+
+    <line x1="35" y1="92" x2="525" y2="92" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+    <text x="12" y="95" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="8">40%</text>
+
+    <line x1="35" y1="120" x2="525" y2="120" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+    <text x="12" y="123" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="8">20%</text>
+
+    <!-- RAM Area and Line (58% approx baseline) -->
+    <polygon points="35,124 35,76 75,74 115,70 155,72 195,68 235,66 275,69 315,67 355,65 395,67 435,64 475,66 515,65 525,65 525,124" fill="url(#ramAreaGrad)" />
+    <polyline points="35,76 75,74 115,70 155,72 195,68 235,66 275,69 315,67 355,65 395,67 435,64 475,66 515,65 525,65" fill="none" stroke="url(#ramLineGrad)" stroke-width="2" />
+
+    <!-- CPU Area and Line (Spiking past 80% to 84.2%) -->
+    <polygon points="35,124 35,90 75,85 115,82 155,75 195,60 235,52 275,44 315,48 355,42 395,38 435,32 475,30 515,31 525,31 525,124" fill="url(#cpuAreaGrad)" />
+    <polyline points="35,90 75,85 115,82 155,75 195,60 235,52 275,44 315,48 355,42 395,38 435,32 475,30 515,31 525,31" fill="none" stroke="url(#cpuLineGrad)" stroke-width="2.5" />
+
+    <!-- Active Tooltip Callout at 515, 31 (Peak 84.2%) -->
+    <circle cx="515" cy="31" r="5" fill="#ef4444" filter="url(#redGlow)" />
+    <circle cx="515" cy="31" r="2.5" fill="#ffffff" />
+    <rect x="415" y="42" width="105" height="34" rx="4" fill="#0d1424" stroke="#ef4444" stroke-width="1" />
+    <text x="422" y="55" fill="#fca5a5" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700">CPU: 84.2% (Alert)</text>
+    <text x="422" y="68" fill="#67e8f9" font-family="'JetBrains Mono', monospace" font-size="8.5">RAM: 58.6% @ 1s</text>
+
+    <!-- X-Axis Timeline Labels -->
+    <text x="40" y="134" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="7.5">-10s</text>
+    <text x="135" y="134" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="7.5">-8s</text>
+    <text x="235" y="134" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="7.5">-6s</text>
+    <text x="335" y="134" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="7.5">-4s</text>
+    <text x="435" y="134" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="7.5">-2s</text>
+    <text x="508" y="134" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700">Now</text>
+  </g>
+
+  <!-- Bottom Docker Compose & Tech Architecture Bar -->
+  <g transform="translate(30, 314)">
+    <rect x="0" y="0" width="540" height="24" rx="4" fill="#0a0f1d" stroke="rgba(255,255,255,0.05)" />
+    <!-- Docker Icon & Single-Command Startup Label -->
+    <text x="10" y="16" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700">🐳 Docker Compose: Single-Command Startup (`docker compose up --build`)</text>
+    
+    <!-- Service Status 1: FastAPI -->
+    <rect x="360" y="4" width="80" height="16" rx="3" fill="rgba(16, 185, 129, 0.15)" />
+    <circle cx="368" cy="12" r="2.5" fill="#10b981" />
+    <text x="374" y="15" fill="#34d399" font-family="'JetBrains Mono', monospace" font-size="8">FastAPI :8000</text>
+
+    <!-- Service Status 2: React -->
+    <rect x="446" y="4" width="86" height="16" rx="3" fill="rgba(56, 189, 248, 0.15)" />
+    <circle cx="454" cy="12" r="2.5" fill="#38bdf8" />
+    <text x="460" y="15" fill="#7dd3fc" font-family="'JetBrains Mono', monospace" font-size="8">React UI :3000</text>
+  </g>
+</svg>

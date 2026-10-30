@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="devBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117" />
+      <stop offset="100%" stop-color="#161b22" />
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="360" fill="url(#devBg)" rx="12" />
+
+  <!-- IDE Window Frame -->
+  <rect x="25" y="25" width="550" height="310" rx="10" fill="#0d1117" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" />
+  
+  <!-- Title bar -->
+  <rect x="25" y="25" width="550" height="36" rx="10" fill="#090d13" />
+  <circle cx="50" cy="43" r="4.5" fill="#ef4444" />
+  <circle cx="65" cy="43" r="4.5" fill="#f59e0b" />
+  <circle cx="80" cy="43" r="4.5" fill="#10b981" />
+  <text x="110" y="47" fill="#8b949e" font-family="monospace" font-size="11">DevFlow Sandbox [Session: #89a1f] - main.cpp</text>
+  
+  <!-- Active Collaborator Badges -->
+  <g transform="translate(420, 34)">
+    <circle cx="10" cy="9" r="9" fill="#6366f1" />
+    <text x="7" y="13" fill="#fff" font-family="sans-serif" font-weight="700" font-size="9">S</text>
+    <circle cx="28" cy="9" r="9" fill="#10b981" />
+    <text x="25" y="13" fill="#fff" font-family="sans-serif" font-weight="700" font-size="9">A</text>
+    <rect x="45" y="1" width="60" height="16" rx="4" fill="rgba(99,102,241,0.2)" />
+    <text x="50" y="12" fill="#a5b4fc" font-family="monospace" font-size="9">CRDT Synced</text>
+  </g>
+
+  <!-- Left Sidebar (File Explorer) -->
+  <rect x="25" y="61" width="110" height="274" fill="#090d13" />
+  <g font-family="monospace" font-size="10" fill="#8b949e">
+    <text x="35" y="85" fill="#c9d1d9">📁 src</text>
+    <text x="45" y="110" fill="#58a6ff">📄 main.cpp</text>
+    <text x="45" y="135">📄 server.ts</text>
+    <text x="45" y="160">📄 Dockerfile</text>
+    <text x="35" y="195" fill="#c9d1d9">📁 tests</text>
+    <text x="45" y="220">📄 test_dsa.py</text>
+  </g>
+
+  <!-- Code Editor Window -->
+  <rect x="135" y="61" width="440" height="175" fill="#0d1117" />
+  
+  <g font-family="monospace" font-size="10">
+    <text x="150" y="88" fill="#ff7b72">#include</text>
+    <text x="205" y="88" fill="#a5d6ff">&lt;iostream&gt;</text>
+    
+    <text x="150" y="112" fill="#ff7b72">#include</text>
+    <text x="205" y="112" fill="#a5d6ff">&lt;vector&gt;</text>
+
+    <text x="150" y="142" fill="#7ee787">int</text>
+    <text x="175" y="142" fill="#d2a8ff">main</text>
+    <text x="200" y="142" fill="#c9d1d9">() {</text>
+
+    <text x="170" y="166" fill="#8b949e">// Sandboxed cgroup worker test</text>
+    <text x="170" y="190" fill="#c9d1d9">std::cout &lt;&lt;</text>
+    <text x="260" y="190" fill="#a5d6ff">"System initialized in 380ms\n"</text>
+    <text x="500" y="190" fill="#c9d1d9">;</text>
+
+    <!-- Cursor Sona -->
+    <line x1="518" y1="178" x2="518" y2="194" stroke="#6366f1" stroke-width="2" />
+    <rect x="505" y="166" width="30" height="12" rx="2" fill="#6366f1" />
+    <text x="508" y="175" fill="#fff" font-family="sans-serif" font-size="7">Sona</text>
+
+    <text x="170" y="214" fill="#ff7b72">return</text>
+    <text x="215" y="214" fill="#79c0ff">0</text>
+    <text x="225" y="214" fill="#c9d1d9">;</text>
+    <text x="150" y="234" fill="#c9d1d9">}</text>
+  </g>
+
+  <!-- Bottom Console / Terminal -->
+  <rect x="135" y="236" width="440" height="99" fill="#070a0e" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+  
+  <rect x="135" y="236" width="440" height="22" fill="#0d1117" />
+  <text x="145" y="251" fill="#7ee787" font-family="monospace" font-size="9">● TERMINAL</text>
+  <text x="220" y="251" fill="#8b949e" font-family="monospace" font-size="9">CONTAINER: [cgroup-runner:alpine-v2]</text>
+  
+  <g font-family="monospace" font-size="9" fill="#c9d1d9">
+    <text x="145" y="275" fill="#8b949e">$ g++ -O3 main.cpp -o app &amp;&amp; ./app</text>
+    <text x="145" y="295" fill="#7ee787">✔ System initialized in 380ms</text>
+    <text x="145" y="315" fill="#38bdf8">Process finished with exit code 0 (RAM: 14.2MB / 128MB)</text>
+  </g>
+</svg>

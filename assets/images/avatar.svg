@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="avatarBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="circuitGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="50%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <filter id="glowOuter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Circular Base -->
+  <circle cx="160" cy="160" r="150" fill="url(#avatarBg)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="2" />
+  
+  <!-- Outer Glow Ring -->
+  <circle cx="160" cy="160" r="148" fill="none" stroke="url(#circuitGlow)" stroke-width="2.5" stroke-dasharray="16 8" />
+
+  <!-- Background Matrix / Circuit Traces -->
+  <g stroke="rgba(99, 102, 241, 0.25)" stroke-width="1.5" stroke-linecap="round">
+    <path d="M 50 160 L 90 160 L 110 140 L 140 140" fill="none" />
+    <circle cx="50" cy="160" r="3" fill="#6366f1" />
+    
+    <path d="M 270 160 L 230 160 L 210 180 L 180 180" fill="none" />
+    <circle cx="270" cy="160" r="3" fill="#06b6d4" />
+
+    <path d="M 160 50 L 160 90 L 140 110" fill="none" />
+    <circle cx="160" cy="50" r="3" fill="#10b981" />
+  </g>
+
+  <!-- Stylized Developer Silhouette -->
+  <!-- Shoulders / Torso -->
+  <path d="M 80 270 C 80 215 120 205 160 205 C 200 205 240 215 240 270 Z" fill="#1e293b" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5" />
+  
+  <!-- Hoodie / Collar Accent -->
+  <path d="M 125 210 L 160 240 L 195 210" fill="none" stroke="url(#circuitGlow)" stroke-width="2.5" />
+
+  <!-- Head / Neck -->
+  <rect x="145" y="180" width="30" height="30" rx="6" fill="#0f172a" />
+  <circle cx="160" cy="140" r="46" fill="#334155" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.5" />
+
+  <!-- Sleek Hair / Modern Cut -->
+  <path d="M 116 135 C 114 95 155 80 175 82 C 195 84 206 100 204 125 C 190 105 155 105 116 135 Z" fill="#0f172a" />
+
+  <!-- Developer Cyber Glasses / Headset HUD -->
+  <rect x="130" y="132" width="60" height="15" rx="4" fill="rgba(6, 182, 212, 0.85)" filter="url(#glowOuter)" />
+  <line x1="130" y1="139" x2="190" y2="139" stroke="#ffffff" stroke-width="1" />
+  
+  <!-- Headphones Band -->
+  <path d="M 112 145 C 112 110 130 90 160 90 C 190 90 208 110 208 145" fill="none" stroke="#6366f1" stroke-width="4" stroke-linecap="round" />
+  <rect x="108" y="135" width="8" height="20" rx="3" fill="#818cf8" />
+  <rect x="204" y="135" width="8" height="20" rx="3" fill="#818cf8" />
+
+  <!-- Floating Tech Badges around avatar -->
+  <g transform="translate(60, 80)">
+    <rect x="-10" y="-10" width="40" height="20" rx="4" fill="#0f172a" stroke="#6366f1" stroke-width="1" />
+    <text x="-3" y="4" fill="#a5b4fc" font-family="monospace" font-weight="700" font-size="9">C++</text>
+  </g>
+
+  <g transform="translate(250, 85)">
+    <rect x="-10" y="-10" width="42" height="20" rx="4" fill="#0f172a" stroke="#06b6d4" stroke-width="1" />
+    <text x="-4" y="4" fill="#67e8f9" font-family="monospace" font-weight="700" font-size="9">PY</text>
+  </g>
+
+  <g transform="translate(160, 290)">
+    <rect x="-45" y="-12" width="90" height="22" rx="11" fill="#1e1b4b" stroke="#10b981" stroke-width="1.2" />
+    <circle cx="-32" cy="-1" r="3.5" fill="#10b981" />
+    <text x="-22" y="3" fill="#34d399" font-family="monospace" font-weight="600" font-size="9">AI &amp; SYSTEMS</text>
+  </g>
+</svg>

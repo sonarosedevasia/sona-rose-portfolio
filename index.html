@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="pastel">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sona Rose Devasia - B.Tech Computer Science Student Portfolio. Data Structures, Algorithms, Machine Learning, and Full-Stack Web Development." />
+  <meta name="keywords" content="Sona Rose Devasia, Computer Science, Machine Learning, Full-Stack, B.Tech, Python, FastAPI, Streamlit, SQLite, Amal Jyothi" />
+  <meta name="author" content="Sona Rose Devasia" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Sona Rose Devasia | B.Tech Computer Science Student Portfolio" />
+  <meta property="og:description" content="B.Tech Computer Science student with hands-on experience in ML, algorithms, and full-stack web development." />
+  <meta property="og:type" content="website" />
+
+  <title>Sona Rose Devasia | B.Tech Computer Science Student</title>
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets (Versioned for cache busting) -->
+  <link rel="stylesheet" href="css/style.css?v=pastel_harmony_1" />
+  <link rel="stylesheet" href="css/components.css?v=pastel_harmony_1" />
+  <link rel="stylesheet" href="css/animations.css?v=pastel_harmony_1" />
+  <link rel="stylesheet" href="css/responsive.css?v=pastel_harmony_1" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/avatar.svg" />
+</head>
+<body>
+
+  <!-- Background Neural Network Canvas -->
+  <div id="neural-canvas-container">
+    <canvas id="neural-canvas"></canvas>
+  </div>
+
+  <!-- ========================================================================
+       HEADER / NAVBAR
+       ======================================================================== -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" aria-label="Sona Rose Devasia Portfolio">
+        <img src="assets/images/pic_back.jpg" alt="Sona Rose Devasia" class="logo-photo" />
+        <span>Sona Rose Devasia</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav>
+        <ul class="nav-links" id="nav-links-menu">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions (Command Palette, Resume, Mobile Toggle) -->
+      <div class="nav-actions">
+        <!-- Search Trigger Button -->
+        <button class="cmd-palette-btn" id="cmd-palette-trigger" title="Search portfolio (or press Ctrl+K)">
+          <span>🔍</span>
+          <span class="search-label">Search</span>
+        </button>
+
+        <!-- View Resume CTA -->
+        <button class="btn btn-primary btn-sm" onclick="window.openResumeModal()">
+          <span>📄 Resume</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <span>☰</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ========================================================================
+       HERO SECTION
+       ======================================================================== -->
+  <section class="section hero" id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Left: Headline & Bio -->
+        <div class="hero-content">
+          <div class="hero-status-badge">
+            <span class="pulse-dot"></span>
+            <span>Open to Internships &amp; Roles &bull; B.Tech CSE (2023 - 2027)</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="text-gradient">Sona Rose Devasia</span>
+          </h1>
+
+          <div class="hero-subtitle-container">
+            <span>&gt; </span>
+            <span class="hero-subtitle-text">B.Tech Computer Science Student</span>
+          </div>
+
+          <p class="hero-description">
+            B.Tech Computer Science student with hands-on experience in data structures, algorithms, machine learning, and full-stack web development, built through two internships and multiple independent projects.
+          </p>
+
+          <!-- Metrics Ticker -->
+          <div class="hero-stats-row">
+            <div class="hero-stat-item">
+              <div class="hero-stat-val" id="hero-cgpa-val">9.28</div>
+              <div class="hero-stat-label">B.Tech CGPA / 10</div>
+            </div>
+            <div class="hero-stat-item">
+              <div class="hero-stat-val" id="hero-internships-val">2</div>
+              <div class="hero-stat-label">Internships Done</div>
+            </div>
+            <div class="hero-stat-item">
+              <div class="hero-stat-val" id="hero-projects-val">7</div>
+              <div class="hero-stat-label">Projects</div>
+            </div>
+          </div>
+
+          <!-- Hero Action Buttons -->
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              <span>🚀 Explore Projects</span>
+            </a>
+            <button class="btn btn-secondary" onclick="window.openResumeModal()">
+              <span>📄 View Resume</span>
+            </button>
+            <a href="#contact" class="btn btn-outline">
+              <span>📬 Get in Touch</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Executive Academic & Engineering Profile Card -->
+        <div class="hero-profile-card reveal-right">
+          <!-- Card Top Bar: Status & Academic Merit -->
+          <div class="profile-card-header">
+            <div class="profile-card-badge">
+              <span class="pulse-dot"></span>
+              <span>Available for Internships &amp; Roles</span>
+            </div>
+            <div class="profile-cgpa-pill">
+              <span class="star-icon">★</span>
+              <span><strong>9.28</strong> / 10 CGPA</span>
+            </div>
+          </div>
+
+          <!-- Identity & Degree Row -->
+          <div class="profile-card-body">
+            <div class="profile-identity-row">
+              <div class="profile-avatar-wrap">
+                <img src="assets/images/pic_back.jpg" alt="Sona Rose Devasia" class="profile-avatar-photo" />
+              </div>
+              <div class="profile-title-block">
+                <h3 class="profile-name">Sona Rose Devasia</h3>
+                <p class="profile-degree">B.Tech &bull; Computer Science &amp; Engineering</p>
+                <div class="profile-institution">
+                  <span class="inst-icon">🏛️</span>
+                  <span>Amal Jyothi College of Engineering (2023 – 2027)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Key Corporate Internships Highlights -->
+            <div class="profile-highlights-box">
+              <div class="highlights-heading">WORK EXPERIENCE</div>
+              
+              <div class="profile-exp-item">
+                <div class="exp-icon-dot nest"></div>
+                <div class="exp-item-content">
+                  <div class="exp-item-role">Data Science &amp; Machine Learning Intern</div>
+                  <div class="exp-item-company">NeST Digital &bull; Feb 2026 – Mar 2026</div>
+                </div>
+              </div>
+
+              <div class="profile-exp-item">
+                <div class="exp-icon-dot infosys"></div>
+                <div class="exp-item-content">
+                  <div class="exp-item-role">Machine Learning Intern</div>
+                  <div class="exp-item-company">Infosys Springboard &bull; Oct 2025 – Dec 2025</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Core Engineering Stack -->
+            <div class="profile-skills-box">
+              <div class="highlights-heading">CORE COMPETENCIES</div>
+              <div class="profile-pills-wrap">
+                <span class="profile-pill">Python</span>
+                <span class="profile-pill">Machine Learning</span>
+                <span class="profile-pill">FastAPI</span>
+                <span class="profile-pill">Streamlit</span>
+                <span class="profile-pill">SQL &amp; SQLite</span>
+                <span class="profile-pill">Data Structures</span>
+                <span class="profile-pill">Flask</span>
+                <span class="profile-pill">HTML &amp; CSS</span>
+              </div>
+            </div>
+
+            <!-- Quick Action Links -->
+            <div class="profile-card-actions">
+              <button class="btn btn-primary btn-sm profile-action-btn" onclick="window.openResumeModal()">
+                <span>📄 Full Resume</span>
+              </button>
+              <a href="https://github.com/sonarosedevasia" target="_blank" rel="noopener" class="btn btn-secondary btn-sm profile-action-btn">
+                <span>GitHub</span>
+              </a>
+              <a href="https://linkedin.com/in/sona-rose-devasia-7812332a8" target="_blank" rel="noopener" class="btn btn-secondary btn-sm profile-action-btn">
+                <span>LinkedIn</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       ABOUT SECTION
+       ======================================================================== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">About <span class="text-gradient">Me</span></h2>
+        <p class="section-subtitle">
+          Driven by algorithmic rigor, systems efficiency, and the art of turning complex computational logic into seamless products.
+        </p>
+      </div>
+
+      <!-- Top Row: Profile Card & Bio Narrative in balanced side-by-side alignment -->
+      <div class="about-grid">
+        <!-- Left: Profile Avatar Card -->
+        <div class="card about-card-profile reveal-left">
+          <div class="avatar-wrapper">
+            <img src="assets/images/pic_back.jpg" alt="Sona Rose Devasia Avatar" class="avatar-img" />
+            <div class="avatar-glow-ring"></div>
+          </div>
+
+          <h3 class="profile-name">Sona Rose Devasia</h3>
+          <p class="profile-role">B.Tech Computer Science Student</p>
+          <span class="badge badge-emerald">Class of 2027</span>
+
+          <div class="profile-meta-list">
+            <div class="meta-item">
+              <span class="meta-icon">🎓</span>
+              <span><strong>Degree:</strong> B.Tech in Computer Science &amp; Engg</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-icon">🏛️</span>
+              <span><strong>Institution:</strong> Amal Jyothi College of Engg (Autonomous)</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-icon">📊</span>
+              <span><strong>CGPA:</strong> 9.28 / 10.00</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-icon">📍</span>
+              <span><strong>Location:</strong> Kanjirappally, Kerala, India</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Narrative Card -->
+        <div class="card about-card-narrative reveal-right">
+          <div class="narrative-header">
+            <span class="narrative-tag">✦ Engineering Philosophy</span>
+            <h3 class="narrative-title">Solid Fundamentals, Boundless Curiosity</h3>
+          </div>
+
+          <div class="about-narrative" id="about-narrative-container">
+            <!-- Populated dynamically via JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Row: Core Engineering Pillars spanning full width -->
+      <div class="about-pillars-section reveal">
+        <div class="pillars-section-header">
+          <h3 class="pillars-heading">Core Engineering Pillars</h3>
+          <p class="pillars-sub">Key foundational domains honed through coursework, internships, and hands-on project development</p>
+        </div>
+
+        <div class="pillars-grid" id="about-pillars-container">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       SKILLS SECTION
+       ======================================================================== -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Skills &amp; <span class="text-gradient">Technologies</span></h2>
+        <p class="section-subtitle">
+          Comprehensive arsenal of languages, frameworks, core computer science concepts, and modern cloud DevOps tools.
+        </p>
+      </div>
+
+      <!-- Skills Interactive Filter & Search Controls -->
+      <div class="skills-controls reveal">
+        <div class="skills-filter-tabs" id="skills-tabs">
+          <!-- Populated dynamically -->
+        </div>
+
+        <div class="skills-search-wrapper">
+          <span class="skills-search-icon">🔍</span>
+          <input type="text" id="skills-search-input" class="skills-search-input" placeholder="Search technologies (e.g. Python, FastAPI, SQLite, Streamlit)..." />
+        </div>
+      </div>
+
+      <!-- Skills Grid -->
+      <div class="skills-grid" id="skills-grid">
+        <!-- Populated dynamically -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       PROJECTS SECTION
+       ======================================================================== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
+        <p class="section-subtitle">
+          End-to-end production systems, distributed backends, AI intelligence engines, and systems software built with performance and scale in mind.
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs & Layout View Switcher -->
+      <div class="projects-controls-wrapper reveal">
+        <div class="projects-filter-bar" id="projects-filter-bar">
+          <button class="project-filter-btn active" data-filter="all">All Projects</button>
+          <button class="project-filter-btn" data-filter="ai_ml">AI &amp; Machine Learning</button>
+          <button class="project-filter-btn" data-filter="fullstack">Full-Stack Web</button>
+          <button class="project-filter-btn" data-filter="iot">IoT &amp; Embedded Systems</button>
+        </div>
+
+        <div class="projects-layout-toggle" id="projects-layout-toggle" aria-label="Projects grid density toggle">
+          <button class="layout-toggle-btn" data-cols="2" title="View 2 cards per row">
+            <span>☷ 2 in a row</span>
+          </button>
+          <button class="layout-toggle-btn active" data-cols="3" title="View 3 cards per row">
+            <span>⠿ 3 in a row</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Flagship Featured Projects List -->
+      <div class="featured-projects-list" id="featured-projects-container">
+        <!-- Populated dynamically -->
+      </div>
+
+      <div class="reveal" id="secondary-projects-heading" style="text-align: center; margin: 3rem 0 2rem;">
+        <h3 style="font-size: 1.5rem; color: var(--text-heading);">Additional Engineering Projects &amp; Experiments</h3>
+      </div>
+
+      <!-- Secondary Projects Grid -->
+      <div class="secondary-projects-grid" id="secondary-projects-container">
+        <!-- Populated dynamically -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       EXPERIENCE & EDUCATION SECTIONS
+       ======================================================================== -->
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Experience &amp; <span class="text-gradient">Education</span></h2>
+        <p class="section-subtitle">
+          Academic excellence blended with hands-on software engineering internships, academic research fellowships, and technical community leadership.
+        </p>
+      </div>
+
+      <!-- 1. Engineering Experience Block -->
+      <div class="career-block reveal">
+        <div class="career-block-header">
+          <div class="career-block-title-row">
+            <span class="timeline-col-icon">💼</span>
+            <div>
+              <h3 class="timeline-col-title">Engineering Experience</h3>
+              <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.2rem;">
+                Hands-on industry engineering internships in Data Science, Machine Learning, and Web Technologies.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="experience-cards-grid" id="experience-timeline-container">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+
+      <!-- 2. Academic Background Block -->
+      <div class="career-block reveal" id="education" style="margin-top: 4rem;">
+        <div class="career-block-header">
+          <div class="career-block-title-row">
+            <span class="timeline-col-icon">🎓</span>
+            <div>
+              <h3 class="timeline-col-title">Academic Background</h3>
+              <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.2rem;">
+                Formal computer science education, autonomous institution merit, and secondary board distinctions.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="education-cards-grid" id="education-timeline-container">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+
+      <!-- Honors & Achievements Grid -->
+      <div class="section-header reveal" style="margin-top: 3.5rem; margin-bottom: 2rem;">
+        <h3 style="font-size: 1.5rem; color: var(--text-heading);">Key Honors &amp; Competitive Milestones</h3>
+      </div>
+      <div class="achievements-grid" id="achievements-container">
+        <!-- Populated dynamically -->
+      </div>
+
+      <!-- Hackathons & Competitions Grid -->
+      <div class="section-header reveal" style="margin-top: 3.5rem; margin-bottom: 2rem;">
+        <h3 style="font-size: 1.5rem; color: var(--text-heading);">Hackathons &amp; <span class="text-gradient">Competitions</span></h3>
+      </div>
+      <div class="hackathons-grid" id="hackathons-container">
+        <!-- Populated dynamically -->
+      </div>
+
+      <div class="section-header reveal" style="margin-top: 3.5rem; margin-bottom: 2rem;">
+        <h3 style="font-size: 1.5rem; color: var(--text-heading);">Professional <span class="text-gradient">Certifications</span></h3>
+      </div>
+      <div class="achievements-grid" id="certifications-container">
+        <!-- Populated dynamically -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       CONTACT SECTION
+       ======================================================================== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Get in <span class="text-gradient">Touch</span></h2>
+        <p class="section-subtitle">
+          Have an internship opening, research opportunity, or exciting engineering problem? My inbox is always open.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Left: Direct Channels & Status Card -->
+        <div class="contact-info-col reveal-left">
+          <div class="contact-highlight-card">
+            <div class="hero-status-badge" style="margin-bottom: 0;">
+              <span class="pulse-dot"></span>
+              <span>Available for Internships &amp; Roles</span>
+            </div>
+
+            <div class="contact-links-list">
+              <!-- Phone Item with Copy Button -->
+              <div class="contact-channel-item">
+                <div class="channel-left">
+                  <span class="channel-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  </span>
+                  <div>
+                    <div class="channel-label">Phone Number</div>
+                    <a href="tel:+919207091814" class="channel-val" style="color: inherit; text-decoration: none;" title="Click to call">+91 9207091814</a>
+                  </div>
+                </div>
+                <button type="button" class="channel-copy-btn" onclick="window.copyToClipboard('+91 9207091814', 'Phone number copied to clipboard!')">
+                  Copy
+                </button>
+              </div>
+
+              <!-- Email Item with Copy Button -->
+              <div class="contact-channel-item">
+                <div class="channel-left">
+                  <span class="channel-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                  </span>
+                  <div>
+                    <div class="channel-label">Email Address</div>
+                    <a href="mailto:sonarosedevasia@gmail.com" class="channel-val" style="color: inherit; text-decoration: none;" title="Click to compose email">sonarosedevasia@gmail.com</a>
+                  </div>
+                </div>
+                <button type="button" class="channel-copy-btn" onclick="window.copyToClipboard('sonarosedevasia@gmail.com', 'Email copied to clipboard!')">
+                  Copy
+                </button>
+              </div>
+
+              <!-- LinkedIn Item -->
+              <a href="https://linkedin.com/in/sona-rose-devasia-7812332a8" target="_blank" rel="noopener noreferrer" class="contact-channel-item" title="Visit LinkedIn Profile">
+                <div class="channel-left">
+                  <span class="channel-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c.97 0 1.75-.79 1.75-1.76s-.78-1.75-1.75-1.75a1.76 1.76 0 0 0-1.76 1.75c0 .97.79 1.76 1.76 1.76m1.39 9.74v-8.37H5.07v8.37h2.78z"/></svg>
+                  </span>
+                  <div>
+                    <div class="channel-label">LinkedIn</div>
+                    <div class="channel-val">linkedin.com/in/sona-rose-devasia-7812332a8</div>
+                  </div>
+                </div>
+                <span style="color: var(--accent-primary); font-size: 0.9rem;">↗</span>
+              </a>
+
+              <!-- GitHub Item -->
+              <a href="https://github.com/sonarosedevasia" target="_blank" rel="noopener noreferrer" class="contact-channel-item" title="Visit GitHub Profile">
+                <div class="channel-left">
+                  <span class="channel-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                  </span>
+                  <div>
+                    <div class="channel-label">GitHub</div>
+                    <div class="channel-val">github.com/sonarosedevasia</div>
+                  </div>
+                </div>
+                <span style="color: var(--accent-primary); font-size: 0.9rem;">↗</span>
+              </a>
+
+              <!-- Location Item -->
+              <div class="contact-channel-item">
+                <div class="channel-left">
+                  <span class="channel-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  </span>
+                  <div>
+                    <div class="channel-label">Location</div>
+                    <div class="channel-val">Kanjirappally, Kerala, India</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Message Form -->
+        <div class="contact-form-card reveal-right">
+          <h3 style="font-size: 1.35rem; margin-bottom: 1.25rem;">Send a Direct Message</h3>
+
+          <form id="contact-form">
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="form-name" class="form-label">Your Name *</label>
+                <input type="text" id="form-name" class="form-input" placeholder="e.g. Alex Mercer" required />
+              </div>
+              <div class="form-group">
+                <label for="form-email" class="form-label">Your Email *</label>
+                <input type="email" id="form-email" class="form-input" placeholder="e.g. alex@company.com" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="form-subject" class="form-label">Subject</label>
+              <input type="text" id="form-subject" class="form-input" placeholder="SWE Internship / Project Collaboration" />
+            </div>
+
+            <div class="form-group">
+              <label for="form-message" class="form-label">Message *</label>
+              <textarea id="form-message" class="form-textarea" maxlength="500" placeholder="Hi Sona, I came across your portfolio and wanted to discuss..." required></textarea>
+            </div>
+
+            <div class="form-footer-row">
+              <span class="form-counter" id="form-char-counter">0 / 500</span>
+              <button type="submit" class="btn btn-primary">
+                <span>📨 Send Message</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="logo-badge">✦</span>
+          <span style="font-size: 1.1rem; color: var(--text-heading);">Sona Rose Devasia &bull; B.Tech Computer Science Student</span>
+        </div>
+
+        <div class="footer-socials">
+          <a href="https://github.com/sonarosedevasia" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="GitHub Profile" title="GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/sona-rose-devasia-7812332a8" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="LinkedIn Profile" title="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c.97 0 1.75-.79 1.75-1.76s-.78-1.75-1.75-1.75a1.76 1.76 0 0 0-1.76 1.75c0 .97.79 1.76 1.76 1.76m1.39 9.74v-8.37H5.07v8.37h2.78z"/></svg>
+          </a>
+          <a href="mailto:sonarosedevasia@gmail.com" class="btn-icon" aria-label="Send Email" title="Email: sonarosedevasia@gmail.com">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+          </a>
+          <a href="tel:+919207091814" class="btn-icon" aria-label="Call Sona" title="Phone: +91 9207091814">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Sona Rose Devasia. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- ========================================================================
+       COMMAND PALETTE (CTRL+K) MODAL (INNOVATION 2)
+       ======================================================================== -->
+  <div class="palette-overlay" id="palette-overlay">
+    <div class="palette-modal">
+      <div class="palette-search-bar">
+        <span style="font-size: 1.1rem; color: var(--accent-primary);">🔍</span>
+        <input type="text" id="palette-input" class="palette-input" placeholder="Search sections, projects, skills, or actions..." autocomplete="off" spellcheck="false" />
+        <button type="button" class="palette-icon-close" id="palette-header-close-btn" aria-label="Close search" title="Close">✕</button>
+      </div>
+
+      <div class="palette-results-list" id="palette-results">
+        <!-- Populated dynamically -->
+      </div>
+
+      <div class="palette-footer">
+        <span>Navigation: <kbd class="kbd-shortcut">↑</kbd> <kbd class="kbd-shortcut">↓</kbd> to navigate, <kbd class="kbd-shortcut">Enter</kbd> to select</span>
+        <button type="button" class="palette-close-btn" id="palette-close-btn" aria-label="Close search">✕ Close</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================
+       PROJECT CASE STUDY MODAL (INNOVATION 3)
+       ======================================================================== -->
+  <div class="project-modal-overlay" id="project-modal-overlay">
+    <div class="project-modal-content">
+      <div class="modal-header-bar">
+        <span class="section-tag" style="margin-bottom: 0;">Case Study</span>
+        <button class="btn-icon" id="project-modal-close" style="width: 32px; height: 32px; font-size: 1.2rem;">&times;</button>
+      </div>
+
+      <div class="modal-body" id="project-modal-container">
+        <!-- Populated dynamically on click -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================
+       RESUME / CV QUICK PREVIEW MODAL
+       ======================================================================== -->
+  <div class="project-modal-overlay" id="resume-modal-overlay">
+    <div class="project-modal-content resume-modal-dialog">
+      <div class="modal-header-bar">
+        <div class="resume-modal-title">
+          <span class="resume-badge">📄 PDF</span>
+          <span style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; color: var(--text-heading);">Sona Rose Devasia &bull; Resume</span>
+        </div>
+        <div class="resume-modal-actions">
+          <a href="resume/resume.pdf" target="_blank" class="btn btn-primary btn-sm" id="resume-open-link" title="Open in New Tab">
+            <span>↗️ Open in New Tab</span>
+          </a>
+          <button class="btn-icon" id="resume-modal-close" aria-label="Close resume viewer" style="width: 34px; height: 34px; font-size: 1.3rem;">&times;</button>
+        </div>
+      </div>
+
+      <div class="resume-modal-body">
+        <iframe id="resume-pdf-viewer" src="resume/resume.pdf" class="resume-pdf-frame" title="Sona Rose Devasia Resume">
+          <div class="pdf-fallback-msg">
+            <p style="margin-bottom: 1rem;">Your browser doesn't support embedded PDFs.</p>
+            <a href="resume/resume.pdf" target="_blank" class="btn btn-primary btn-sm">Open or Download PDF</a>
+          </div>
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================
+       CERTIFICATE IMAGE PREVIEW MODAL
+       ======================================================================== -->
+  <div class="project-modal-overlay" id="cert-viewer-modal-overlay">
+    <div class="project-modal-content" style="max-width: 820px; padding: 0; overflow: hidden;">
+      <div class="modal-header-bar">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <span class="badge badge-olive" id="cert-modal-badge">Verified Certificate</span>
+          <span id="cert-modal-title" style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; color: var(--text-heading);">Certificate</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <a href="#" target="_blank" class="btn btn-primary btn-sm" id="cert-modal-open-link" title="Open Full Image">
+            <span>↗️ Open Full Image</span>
+          </a>
+          <button class="btn-icon" id="cert-viewer-modal-close" aria-label="Close certificate viewer" style="width: 34px; height: 34px; font-size: 1.3rem;">&times;</button>
+        </div>
+      </div>
+      <div style="padding: 1.5rem; background: var(--bg-tertiary); display: flex; justify-content: center; align-items: center;">
+        <img id="cert-modal-img" src="" alt="Certificate" style="max-width: 100%; max-height: 75vh; border-radius: var(--radius-md); box-shadow: var(--shadow-card); object-fit: contain;" />
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Toast Notifications Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Scripts (Versioned for instant cache busting) -->
+  <script src="js/data.js?v=2.7"></script>
+  <script src="js/particle-canvas.js?v=2.7"></script>
+  <script src="js/command-palette.js?v=2.7"></script>
+  <script src="js/project-modal.js?v=2.7"></script>
+  <script src="js/main.js?v=2.7"></script>
+</body>
+</html>

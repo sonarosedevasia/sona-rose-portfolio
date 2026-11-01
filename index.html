@@ -14,15 +14,15 @@
 
   <title>Sona Rose Devasia | B.Tech Computer Science Student</title>
 
-  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <!-- Google Fonts: Barlow Semi Condensed, JetBrains Mono, Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Stylesheets (Versioned for cache busting) -->
-  <link rel="stylesheet" href="css/style.css?v=pastel_harmony_1" />
-  <link rel="stylesheet" href="css/components.css?v=pastel_harmony_1" />
-  <link rel="stylesheet" href="css/animations.css?v=pastel_harmony_1" />
-  <link rel="stylesheet" href="css/responsive.css?v=pastel_harmony_1" />
+  <link rel="stylesheet" href="css/style.css?v=skills_5cards_v2" />
+  <link rel="stylesheet" href="css/components.css?v=skills_5cards_v2" />
+  <link rel="stylesheet" href="css/animations.css?v=skills_5cards_v2" />
+  <link rel="stylesheet" href="css/responsive.css?v=skills_5cards_v2" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/images/avatar.svg" />
@@ -226,32 +226,29 @@
     <div class="container">
       <div class="section-header reveal">
         <h2 class="section-title">About <span class="text-gradient">Me</span></h2>
-        <p class="section-subtitle">
-          Driven by algorithmic rigor, systems efficiency, and the art of turning complex computational logic into seamless products.
-        </p>
       </div>
 
       <!-- Top Row: Profile Card & Bio Narrative in balanced side-by-side alignment -->
       <div class="about-grid">
-        <!-- Left: Profile Avatar Card -->
+        <!-- Left: Profile Card (Card Box Restored) -->
         <div class="card about-card-profile reveal-left">
           <div class="avatar-wrapper">
+            <div class="avatar-slanted-box"></div>
             <img src="assets/images/pic_back.jpg" alt="Sona Rose Devasia Avatar" class="avatar-img" />
-            <div class="avatar-glow-ring"></div>
           </div>
 
           <h3 class="profile-name">Sona Rose Devasia</h3>
           <p class="profile-role">B.Tech Computer Science Student</p>
-          <span class="badge badge-emerald">Class of 2027</span>
+          <span class="badge badge-emerald profile-year-badge">2023 - 2027</span>
 
           <div class="profile-meta-list">
             <div class="meta-item">
               <span class="meta-icon">🎓</span>
-              <span><strong>Degree:</strong> B.Tech in Computer Science &amp; Engg</span>
+              <span><strong>Degree:</strong> B.Tech in Computer Science &amp; Engineering</span>
             </div>
             <div class="meta-item">
               <span class="meta-icon">🏛️</span>
-              <span><strong>Institution:</strong> Amal Jyothi College of Engg (Autonomous)</span>
+              <span><strong>Institution:</strong> Amal Jyothi College of Engineering (Autonomous)</span>
             </div>
             <div class="meta-item">
               <span class="meta-icon">📊</span>
@@ -264,28 +261,11 @@
           </div>
         </div>
 
-        <!-- Right: Narrative Card -->
-        <div class="card about-card-narrative reveal-right">
-          <div class="narrative-header">
-            <span class="narrative-tag">✦ Engineering Philosophy</span>
-            <h3 class="narrative-title">Solid Fundamentals, Boundless Curiosity</h3>
-          </div>
-
+        <!-- Right: Bio Narrative directly shown without box -->
+        <div class="about-narrative-wrap reveal-right">
           <div class="about-narrative" id="about-narrative-container">
             <!-- Populated dynamically via JS -->
           </div>
-        </div>
-      </div>
-
-      <!-- Bottom Row: Core Engineering Pillars spanning full width -->
-      <div class="about-pillars-section reveal">
-        <div class="pillars-section-header">
-          <h3 class="pillars-heading">Core Engineering Pillars</h3>
-          <p class="pillars-sub">Key foundational domains honed through coursework, internships, and hands-on project development</p>
-        </div>
-
-        <div class="pillars-grid" id="about-pillars-container">
-          <!-- Populated dynamically via JS -->
         </div>
       </div>
     </div>
@@ -299,21 +279,6 @@
     <div class="container">
       <div class="section-header reveal">
         <h2 class="section-title">Skills &amp; <span class="text-gradient">Technologies</span></h2>
-        <p class="section-subtitle">
-          Comprehensive arsenal of languages, frameworks, core computer science concepts, and modern cloud DevOps tools.
-        </p>
-      </div>
-
-      <!-- Skills Interactive Filter & Search Controls -->
-      <div class="skills-controls reveal">
-        <div class="skills-filter-tabs" id="skills-tabs">
-          <!-- Populated dynamically -->
-        </div>
-
-        <div class="skills-search-wrapper">
-          <span class="skills-search-icon">🔍</span>
-          <input type="text" id="skills-search-input" class="skills-search-input" placeholder="Search technologies (e.g. Python, FastAPI, SQLite, Streamlit)..." />
-        </div>
       </div>
 
       <!-- Skills Grid -->
@@ -331,9 +296,6 @@
     <div class="container">
       <div class="section-header reveal">
         <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
-        <p class="section-subtitle">
-          End-to-end production systems, distributed backends, AI intelligence engines, and systems software built with performance and scale in mind.
-        </p>
       </div>
 
       <!-- Category Filter Tabs & Layout View Switcher -->
@@ -379,9 +341,6 @@
     <div class="container">
       <div class="section-header reveal">
         <h2 class="section-title">Experience &amp; <span class="text-gradient">Education</span></h2>
-        <p class="section-subtitle">
-          Academic excellence blended with hands-on software engineering internships, academic research fellowships, and technical community leadership.
-        </p>
       </div>
 
       <!-- 1. Engineering Experience Block -->
@@ -391,9 +350,6 @@
             <span class="timeline-col-icon">💼</span>
             <div>
               <h3 class="timeline-col-title">Engineering Experience</h3>
-              <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.2rem;">
-                Hands-on industry engineering internships in Data Science, Machine Learning, and Web Technologies.
-              </p>
             </div>
           </div>
         </div>
@@ -409,9 +365,6 @@
             <span class="timeline-col-icon">🎓</span>
             <div>
               <h3 class="timeline-col-title">Academic Background</h3>
-              <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.2rem;">
-                Formal computer science education, autonomous institution merit, and secondary board distinctions.
-              </p>
             </div>
           </div>
         </div>
@@ -552,30 +505,38 @@
             <div class="form-group-row">
               <div class="form-group">
                 <label for="form-name" class="form-label">Your Name *</label>
-                <input type="text" id="form-name" class="form-input" placeholder="e.g. Alex Mercer" required />
+                <input type="text" id="form-name" name="name" class="form-input" placeholder="e.g. Alex Mercer" required />
               </div>
               <div class="form-group">
                 <label for="form-email" class="form-label">Your Email *</label>
-                <input type="email" id="form-email" class="form-input" placeholder="e.g. alex@company.com" required />
+                <input type="email" id="form-email" name="email" class="form-input" placeholder="e.g. alex@company.com" required />
               </div>
             </div>
 
             <div class="form-group">
               <label for="form-subject" class="form-label">Subject</label>
-              <input type="text" id="form-subject" class="form-input" placeholder="SWE Internship / Project Collaboration" />
+              <input type="text" id="form-subject" name="subject" class="form-input" placeholder="SWE Internship / Project Collaboration" />
             </div>
 
             <div class="form-group">
               <label for="form-message" class="form-label">Message *</label>
-              <textarea id="form-message" class="form-textarea" maxlength="500" placeholder="Hi Sona, I came across your portfolio and wanted to discuss..." required></textarea>
+              <textarea id="form-message" name="message" class="form-textarea" maxlength="500" placeholder="Hi Sona, I came across your portfolio and wanted to discuss..." required></textarea>
             </div>
 
-            <div class="form-footer-row">
+            <div class="form-footer-row" style="flex-wrap: wrap; gap: 0.75rem;">
               <span class="form-counter" id="form-char-counter">0 / 500</span>
-              <button type="submit" class="btn btn-primary">
-                <span>📨 Send Message</span>
-              </button>
+              <div class="form-btn-group" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <button type="button" id="btn-send-gmail" class="btn btn-primary" title="Compose directly in Gmail Web (saved in your Sent mail)">
+                  <span>✉ Send via Gmail</span>
+                </button>
+                <button type="submit" id="btn-send-mailapp" class="btn btn-outline" title="Compose in default Mail App (Outlook, Apple Mail, etc.)">
+                  <span>📨 Default Mail App</span>
+                </button>
+              </div>
             </div>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.75rem; line-height: 1.4;">
+              💡 <em>Opens your email composer with everything pre-filled so the email is dispatched from your own account and saved in your <strong>Sent</strong> mail.</em>
+            </p>
           </form>
         </div>
       </div>
@@ -584,36 +545,13 @@
 
 
   <!-- ========================================================================
-       FOOTER
+       FOOTER (Minimalist & Clean)
        ======================================================================== -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <span class="logo-badge">✦</span>
-          <span style="font-size: 1.1rem; color: var(--text-heading);">Sona Rose Devasia &bull; B.Tech Computer Science Student</span>
-        </div>
-
-        <div class="footer-socials">
-          <a href="https://github.com/sonarosedevasia" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="GitHub Profile" title="GitHub">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-          </a>
-          <a href="https://linkedin.com/in/sona-rose-devasia-7812332a8" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="LinkedIn Profile" title="LinkedIn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c.97 0 1.75-.79 1.75-1.76s-.78-1.75-1.75-1.75a1.76 1.76 0 0 0-1.76 1.75c0 .97.79 1.76 1.76 1.76m1.39 9.74v-8.37H5.07v8.37h2.78z"/></svg>
-          </a>
-          <a href="mailto:sonarosedevasia@gmail.com" class="btn-icon" aria-label="Send Email" title="Email: sonarosedevasia@gmail.com">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-          </a>
-          <a href="tel:+919207091814" class="btn-icon" aria-label="Call Sona" title="Phone: +91 9207091814">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div>
-          &copy; 2026 Sona Rose Devasia. All rights reserved.
-        </div>
+      <div class="footer-simple">
+        <h4 class="footer-name">Sona Rose Devasia</h4>
+        <p class="footer-details">B.Tech in Computer Science &amp; Engineering &bull; Amal Jyothi College of Engineering (Autonomous)</p>
       </div>
     </div>
   </footer>
@@ -720,10 +658,10 @@
   <div class="toast-container" id="toast-container"></div>
 
   <!-- Scripts (Versioned for instant cache busting) -->
-  <script src="js/data.js?v=2.7"></script>
-  <script src="js/particle-canvas.js?v=2.7"></script>
-  <script src="js/command-palette.js?v=2.7"></script>
-  <script src="js/project-modal.js?v=2.7"></script>
-  <script src="js/main.js?v=2.7"></script>
+  <script src="js/data.js?v=skills_5cards_v2"></script>
+  <script src="js/particle-canvas.js?v=skills_5cards_v2"></script>
+  <script src="js/command-palette.js?v=skills_5cards_v2"></script>
+  <script src="js/project-modal.js?v=skills_5cards_v2"></script>
+  <script src="js/main.js?v=skills_5cards_v2"></script>
 </body>
 </html>

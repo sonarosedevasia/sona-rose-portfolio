@@ -101,23 +101,10 @@ function initHeroCodeRunner() {
 function renderAboutSection() {
   const data = window.PORTFOLIO_DATA;
   const narrativeContainer = document.getElementById('about-narrative-container');
-  const pillarsContainer = document.getElementById('about-pillars-container');
 
   if (narrativeContainer && data.personal.bio) {
     narrativeContainer.innerHTML = data.personal.bio.map(paragraph => `
       <p class="narrative-p">${paragraph}</p>
-    `).join('');
-  }
-
-  if (pillarsContainer && data.pillars) {
-    pillarsContainer.innerHTML = data.pillars.map(p => `
-      <div class="pillar-card">
-        <div class="pillar-icon-box">
-          ${getPillarIcon(p.icon)}
-        </div>
-        <h4 class="pillar-title">${p.title}</h4>
-        <p class="pillar-desc">${p.desc}</p>
-      </div>
     `).join('');
   }
 }
@@ -179,44 +166,18 @@ function filterSkills() {
   const data = window.PORTFOLIO_DATA.skills;
   const clusters = data.clusters || [];
 
-  // Filter clusters based on active category
-  let relevantClusters = clusters;
-  if (activeSkillCategory !== 'all') {
-    relevantClusters = clusters.filter(c => c.id === activeSkillCategory);
-  }
-
-  // Filter skills inside clusters if search query is present
-  if (skillSearchQuery) {
-    relevantClusters = relevantClusters.map(cluster => {
-      const matchingSkills = cluster.skills.filter(s =>
-        s.name.toLowerCase().includes(skillSearchQuery) ||
-        cluster.title.toLowerCase().includes(skillSearchQuery)
-      );
-      return { ...cluster, skills: matchingSkills };
-    }).filter(c => c.skills.length > 0);
-  }
-
-  if (relevantClusters.length === 0) {
-    grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 3rem; background: var(--bg-card); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); color: var(--text-muted);">No technical competencies match your search query.</div>`;
-    return;
-  }
-
-  grid.innerHTML = relevantClusters.map(cluster => `
+  grid.innerHTML = clusters.map(cluster => `
     <div class="skills-cluster-card card-fade-in active">
       <div class="cluster-header">
         <div class="cluster-title-wrap">
           <div class="cluster-icon-box">${getClusterIconSvg(cluster.id)}</div>
-          <div>
-            <h3 class="cluster-title">${cluster.title}</h3>
-            <p class="cluster-subtitle">${cluster.summary}</p>
-          </div>
+          <h3 class="cluster-title">${cluster.title}</h3>
         </div>
       </div>
 
       <div class="cluster-skills-wrap">
         ${cluster.skills.map(s => `
           <div class="skill-pill-item">
-            <span class="skill-pill-pip"></span>
             <span class="skill-pill-name">${s.name}</span>
           </div>
         `).join('')}
@@ -232,9 +193,13 @@ function getClusterIconSvg(id) {
     case 'ai_ml':
       return `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>`;
     case 'web_frameworks':
-      return `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>`;
+      return `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg>`;
+    case 'tools_db':
+    case 'tools_iot':
     case 'database_tools':
       return `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>`;
+    case 'embedded_iot':
+      return `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>`;
     case 'concepts_soft':
       return `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>`;
     default:
@@ -418,63 +383,122 @@ function renderTimelineSection() {
   const data = window.PORTFOLIO_DATA;
 
   if (expContainer && data.experience) {
-    expContainer.innerHTML = data.experience.map(e => `
-      <div class="timeline-card experience-card reveal">
-        <div class="timeline-card-main">
-          ${e.coverImage ? `
-            <div class="timeline-cover-wrap" onclick="window.openCertificateModal('${e.coverImage}', '${e.company} — Certificate', 'Internship Certificate')">
-              <img src="${e.coverImage}" alt="${e.company} Certificate Cover" class="timeline-cover-img" loading="lazy" />
-              <div class="timeline-cover-overlay">
-                <span class="btn btn-primary btn-sm">🔍 View Certificate</span>
+    expContainer.innerHTML = `
+      <div class="exp-timeline-wrapper">
+        ${data.experience.map((e, index) => {
+          const isLatest = index === 0;
+          return `
+            <div class="exp-timeline-item reveal">
+              <div class="exp-timeline-track">
+                <div class="exp-timeline-node ${isLatest ? 'exp-node-active' : ''}">
+                  <span class="exp-node-dot"></span>
+                </div>
+                ${index < data.experience.length - 1 ? '<div class="exp-timeline-line"></div>' : ''}
+              </div>
+
+              <div class="exp-card ${isLatest ? 'exp-card-featured' : ''}">
+                <div class="exp-card-header">
+                  <div class="exp-role-info">
+                    <div class="exp-meta-row">
+                      <span class="badge ${isLatest ? 'badge-blue' : 'badge-sage'}">${e.type}</span>
+                      <span class="exp-location-tag">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        ${e.location}
+                      </span>
+                    </div>
+                    <h4 class="exp-role-title">${e.role}</h4>
+                    <div class="exp-company-title">${e.company}</div>
+                  </div>
+
+                  <div class="exp-period-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                    <span>${e.period}</span>
+                  </div>
+                </div>
+
+                <p class="exp-summary-text">${e.summary}</p>
+
+                <div class="exp-achievements-col">
+                  <div class="exp-subheading">Key Engineering Deliverables</div>
+                  <ul class="exp-bullet-list">
+                    ${e.achievements.map(ach => `
+                      <li class="exp-bullet-item">
+                        <span class="exp-bullet-arrow">▹</span>
+                        <span>${ach}</span>
+                      </li>
+                    `).join('')}
+                  </ul>
+                </div>
+
+                ${e.skills && e.skills.length > 0 ? `
+                  <div class="exp-tech-section">
+                    <div class="exp-subheading">Technologies &amp; Frameworks</div>
+                    <div class="exp-tags-wrap">
+                      ${e.skills.map(s => `<span class="exp-tech-chip">${s}</span>`).join('')}
+                    </div>
+                  </div>
+                ` : ''}
+
+                ${e.certificates && e.certificates.length > 0 ? `
+                  <div class="exp-cert-strip">
+                    <div class="exp-subheading" style="margin-bottom: 0.5rem;">Verified Industry Credentials</div>
+                    <div class="exp-cert-btn-group">
+                      ${e.certificates.map(c => `
+                        <button type="button" class="btn btn-secondary btn-sm exp-cert-btn" onclick="window.openCertificateModal('${c.image}', '${c.title.replace(/'/g, "\\'")}', '${c.badge.replace(/'/g, "\\'")}')">
+                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg>
+                          <span>${c.badge}</span>
+                        </button>
+                      `).join('')}
+                    </div>
+                  </div>
+                ` : ''}
               </div>
             </div>
-          ` : ''}
-          <div style="margin-bottom: 0.5rem;">
-            <span class="timeline-period-badge">${e.period} &bull; ${e.type}</span>
-          </div>
-          <h4 class="timeline-role-title">${e.role}</h4>
-          <div class="timeline-org">${e.company} &bull; ${e.location}</div>
-          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.85rem; line-height: 1.65;">${e.summary}</p>
-          <ul class="timeline-bullet-list">
-            ${e.achievements.map(ach => `<li class="timeline-bullet-item">${ach}</li>`).join('')}
-          </ul>
-        </div>
-        ${e.certificates && e.certificates.length > 0 ? `
-          <div class="timeline-cert-strip">
-            <div style="font-size:0.75rem; font-family:var(--font-mono); color:var(--text-muted); text-transform:uppercase; margin-bottom:0.4rem;">Verified Credentials:</div>
-            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
-              ${e.certificates.map(c => `
-                <button type="button" class="btn btn-secondary btn-sm" onclick="window.openCertificateModal('${c.image}', '${c.title}', '${c.badge}')" style="font-size:0.8rem; padding:0.35rem 0.75rem;">
-                  <span>📜 ${c.badge}</span>
-                </button>
-              `).join('')}
-            </div>
-          </div>
-        ` : ''}
+          `;
+        }).join('')}
       </div>
-    `).join('');
+    `;
   }
 
   if (eduContainer && data.education) {
-    eduContainer.innerHTML = data.education.map(edu => `
-      <div class="timeline-card education-card reveal">
-        <div class="timeline-card-main">
-          <div class="edu-card-header">
-            <span class="timeline-period-badge" style="margin-bottom: 0;">${edu.duration}</span>
-            <span class="badge badge-sage" style="font-size: 0.74rem;">${edu.badge}</span>
-          </div>
-          <h4 class="timeline-role-title">${edu.degree}</h4>
-          <div class="timeline-org">${edu.institution}</div>
-          <div class="edu-score-pill">
-            <span style="color: var(--accent-primary);">★</span>
-            <span>Score / CGPA: <strong>${edu.cgpa}</strong></span>
-          </div>
-          <ul class="timeline-bullet-list">
-            ${edu.highlights.map(h => `<li class="timeline-bullet-item">${h}</li>`).join('')}
-          </ul>
-        </div>
+    eduContainer.innerHTML = `
+      <div class="edu-timeline-wrapper">
+        ${data.education.map((edu, index) => {
+          const isLatest = index === 0;
+          const isCollege = index === 0;
+          const scoreLabel = isCollege ? 'CGPA' : 'Percentage';
+          return `
+            <div class="edu-timeline-item reveal">
+              <div class="edu-timeline-track">
+                <div class="edu-timeline-node ${isLatest ? 'edu-node-active' : ''}">
+                  <span class="edu-node-dot"></span>
+                </div>
+                ${index < data.education.length - 1 ? '<div class="edu-timeline-line"></div>' : ''}
+              </div>
+
+              <div class="edu-card ${isLatest ? 'edu-card-featured' : ''}">
+                <div class="edu-card-header">
+                  <div class="edu-role-info">
+                    <h4 class="edu-card-title">${edu.degree}</h4>
+                    <div class="edu-card-school">${edu.institution}</div>
+                  </div>
+
+                  <div class="edu-period-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                    <span>${edu.duration}</span>
+                  </div>
+                </div>
+
+                <div class="edu-score-pill ${isCollege ? 'edu-score-college' : 'edu-score-school'}">
+                  <span class="edu-score-star">★</span>
+                  <span>${scoreLabel}: <strong>${edu.cgpa}</strong></span>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('')}
       </div>
-    `).join('');
+    `;
   }
 }
 
@@ -697,6 +721,7 @@ function initContactForm() {
   const form = document.getElementById('contact-form');
   const messageInput = document.getElementById('form-message');
   const counter = document.getElementById('form-char-counter');
+  const btnGmail = document.getElementById('btn-send-gmail');
 
   if (messageInput && counter) {
     messageInput.addEventListener('input', () => {
@@ -704,32 +729,54 @@ function initContactForm() {
     });
   }
 
+  function getValidatedData() {
+    const name = (document.getElementById('form-name')?.value || '').trim();
+    const email = (document.getElementById('form-email')?.value || '').trim();
+    const subject = (document.getElementById('form-subject')?.value || '').trim();
+    const message = (messageInput?.value || '').trim();
+
+    if (!name || !email || !message) {
+      showToast("Please fill in your name, email, and message.", "info");
+      return null;
+    }
+    return { name, email, subject, message };
+  }
+
+  function sendViaGmail() {
+    const data = getValidatedData();
+    if (!data) return;
+
+    const subjectText = data.subject ? `[Portfolio] ${data.subject}` : `[Portfolio] Message from ${data.name}`;
+    const bodyText = `Hi Sona,\n\n${data.message}\n\n---\nSender: ${data.name}\nEmail: ${data.email}`;
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=sonarosedevasia@gmail.com&su=${encodeURIComponent(subjectText)}&body=${encodeURIComponent(bodyText)}`;
+
+    window.open(gmailUrl, '_blank');
+    showToast("Opening Gmail compose window... Click Send in Gmail!", "success");
+  }
+
+  function sendViaMailApp() {
+    const data = getValidatedData();
+    if (!data) return;
+
+    const subjectText = data.subject ? `[Portfolio] ${data.subject}` : `[Portfolio] Message from ${data.name}`;
+    const bodyText = `Hi Sona,\n\n${data.message}\n\n---\nSender: ${data.name}\nEmail: ${data.email}`;
+    const mailtoUrl = `mailto:sonarosedevasia@gmail.com?subject=${encodeURIComponent(subjectText)}&body=${encodeURIComponent(bodyText)}`;
+
+    window.location.href = mailtoUrl;
+    showToast("Opening your default mail app... Click Send to dispatch!", "success");
+  }
+
+  if (btnGmail) {
+    btnGmail.addEventListener('click', (e) => {
+      e.preventDefault();
+      sendViaGmail();
+    });
+  }
+
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const name = document.getElementById('form-name').value.trim();
-      const email = document.getElementById('form-email').value.trim();
-      const subject = document.getElementById('form-subject').value.trim();
-      const message = messageInput.value.trim();
-
-      if (!name || !email || !message) {
-        showToast("Please complete all required fields.", "info");
-        return;
-      }
-
-      // Simulated dispatch
-      const submitBtn = form.querySelector('button[type="submit"]');
-      const originalText = submitBtn.innerHTML;
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = `<span>⏳ Transmitting message...</span>`;
-
-      setTimeout(() => {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalText;
-        form.reset();
-        if (counter) counter.textContent = '0 / 500';
-        showToast(`Thank you ${name}! Message dispatched successfully.`, "success");
-      }, 1200);
+      sendViaMailApp();
     });
   }
 }
@@ -832,8 +879,12 @@ window.showToast = function(message, type = 'info') {
 
   const toast = document.createElement('div');
   toast.className = `toast toast-${type}`;
+  let icon = 'ℹ';
+  if (type === 'success') icon = '✔';
+  if (type === 'error') icon = '✖';
+
   toast.innerHTML = `
-    <span>${type === 'success' ? '✔' : 'ℹ'}</span>
+    <span>${icon}</span>
     <span>${message}</span>
   `;
 

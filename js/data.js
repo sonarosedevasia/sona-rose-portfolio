@@ -22,15 +22,15 @@ const PORTFOLIO_DATA = {
     github: "https://github.com/sonarosedevasia",
     linkedin: "https://linkedin.com/in/sona-rose-devasia-7812332a8",
     stats: [
-      { label: "B.Tech CGPA", value: "9.28", subtext: "Amal Jyothi College of Engg" },
+      { label: "B.Tech CGPA", value: "9.28", subtext: "Amal Jyothi College of Engineering" },
       { label: "Internships Completed", value: "2", subtext: "NeST Digital & Infosys" },
       { label: "Projects", value: "7", subtext: "Full-Stack, DevOps & AI" },
       { label: "Certifications", value: "4", subtext: "IBM, NPTEL Elite, Oracle, Infosys" }
     ],
     bio: [
-      "I am a B.Tech Computer Science student with a strong foundation in core engineering principles, data structures, algorithms, and full-stack software development, reinforced through two internships and hands-on projects.",
-      "Adaptable, quick to master new technical workflows, and enthusiastic about contributing across diverse software engineering roles—from software engineering and web systems to data pipelines and emerging technologies.",
-      "Driven by curiosity and a commitment to practical problem solving, I actively explore design thinking, hackathons, and collaborative engineering environments to build high-quality solutions."
+      "I’m a B.Tech Computer Science student who genuinely enjoys <strong>learning by building</strong>. I like understanding how things work, trying them out myself, and turning what I learn into something practical. My interests span software development, machine learning, data structures, algorithms, and web technologies.",
+      "I’m <strong>curious, adaptable, and always willing to learn</strong>. When I come across something new, I enjoy figuring it out, asking questions, experimenting, and finding better ways to do it. My internships, projects, and hackathon experiences have taught me that learning doesn’t always happen from a textbook—it often happens when you step outside what you already know and find out why something isn’t working.",
+      "I value <strong>teamwork, consistency, and practical problem-solving</strong>. I enjoy sharing ideas, taking responsibility, and seeing an idea turn into something real. I’m <strong>quietly ambitious, eager to grow, and still exploring where Computer Science will take me</strong>—but the journey of learning, building, and becoming a little better with every experience is what I enjoy most."
     ]
   },
 
@@ -38,7 +38,7 @@ const PORTFOLIO_DATA = {
     {
       icon: "sparkles",
       title: "Data Science & Machine Learning",
-      desc: "Preprocessing real-world datasets, applying ML algorithms for predictive modeling, and training NLU pipelines using spaCy, BERT, and Scikit-learn."
+      desc: "Preprocessing real-world datasets, applying ML algorithms for classification, and training NLU pipelines using spaCy, BERT, and Scikit-learn."
     },
     {
       icon: "layers",
@@ -64,9 +64,9 @@ const PORTFOLIO_DATA = {
       duration: "2023 - 2027",
       cgpa: "9.28 / 10.00",
       badge: "Autonomous Institution",
-      highlights: [
-        "Consistent academic excellence maintaining a 9.28 / 10.00 cumulative CGPA."
-      ],
+      status: "In Progress (Semester 6)",
+      isPrimary: true,
+      description: "Rigorous undergraduate engineering program with specialized focus on Machine Learning, Data Structures & Algorithms, Scalable Web Systems, and Database Architectures.",
       coursework: [
         "Data Structures & Algorithms",
         "Machine Learning",
@@ -84,14 +84,13 @@ const PORTFOLIO_DATA = {
       duration: "2023",
       cgpa: "88.8%",
       badge: "CBSE Board",
-      highlights: [
-        "Secured 88.8% aggregate in CBSE Senior Secondary examinations with focus on Science and Mathematics."
-      ],
+      status: "Completed",
+      description: "Pre-university curriculum with intensive preparation in Computer Science, Advanced Mathematics, and Physical Sciences.",
       coursework: [
+        "Computer Science",
+        "Mathematics",
         "Physics",
         "Chemistry",
-        "Mathematics",
-        "Computer Science",
         "English"
       ]
     },
@@ -100,16 +99,15 @@ const PORTFOLIO_DATA = {
       institution: "Little Flower Public School and Junior College, Kollamula",
       duration: "2021",
       cgpa: "94.8%",
-      badge: "CBSE Board Distinction",
-      highlights: [
-        "Achieved 94.8% distinction in CBSE Class X secondary board examinations."
-      ],
+      badge: "CBSE Board",
+      status: "Completed",
+      description: "Comprehensive secondary education with academic distinction across Science, Mathematics, and Languages.",
       coursework: [
         "Mathematics",
         "Science",
         "Social Science",
         "English",
-        "Hindi / Languages"
+        "Languages"
       ]
     }
   ],
@@ -134,13 +132,13 @@ const PORTFOLIO_DATA = {
           badge: "Certificate of Internship"
         }
       ],
-      summary: "Applied ML algorithms and data preprocessing techniques on real-world datasets to develop predictive models in Python.",
+      summary: "Applied ML algorithms and data preprocessing techniques on real-world datasets in Python.",
       achievements: [
         "Preprocessed and analysed complex datasets using Pandas and NumPy to ensure feature quality.",
         "Applied data preprocessing, hyperparameter tuning, and model evaluation techniques for classification tasks.",
         "Visualized data insights and model evaluation results using Python libraries to support decision-making."
       ],
-      skills: ["Python", "Machine Learning", "Data Preprocessing", "Model Evaluation", "Data Visualization", "Predictive Modeling", "Pandas"]
+      skills: ["Python", "Machine Learning", "Data Preprocessing", "Model Evaluation", "Data Visualization"]
     },
     {
       role: "Machine Learning Intern",
@@ -162,117 +160,110 @@ const PORTFOLIO_DATA = {
         "Built an end-to-end web application using Streamlit, FastAPI, and SQLite for data handling and user interaction.",
         "Tested and validated model performance using precision, recall, and F1-score evaluation metrics."
       ],
-      skills: ["spaCy", "BERT", "Logistic Regression", "Streamlit", "FastAPI", "SQLite", "NLP / NLU", "Model Metrics"]
+      skills: ["spaCy", "BERT", "Logistic Regression", "Streamlit", "FastAPI", "SQLite", "NLU", "Model Metrics"]
     }
   ],
 
   skills: {
-    categories: [
-      { id: "all", name: "All Domains" },
-      { id: "programming", name: "Languages" },
-      { id: "ai_ml", name: "AI & Machine Learning" },
-      { id: "web_frameworks", name: "Web & Backend" },
-      { id: "database_tools", name: "Databases & Tools" },
-      { id: "concepts_soft", name: "CS Foundations" }
-    ],
     clusters: [
       {
         id: "programming",
-        title: "Programming & Core Languages",
+        title: "Programming",
         icon: "code",
-        tag: "Core Stack",
-        summary: "Multi-paradigm programming and algorithmic problem solving.",
+        tag: "Languages",
         skills: [
           { name: "Python" },
           { name: "C" },
-          { name: "Java" },
-          { name: "SQL" },
-          { name: "JavaScript" }
+          { name: "Java (Basics)" },
+          { name: "SQL" }
         ]
       },
       {
         id: "ai_ml",
-        title: "Machine Learning & AI",
+        title: "Machine Learning, Deep Learning & AI",
         icon: "ai",
-        tag: "ML & NLP",
-        summary: "Natural Language Processing, classification, transformers, and data pipelines.",
+        tag: "ML & AI",
         skills: [
-          { name: "Machine Learning" },
           { name: "BERT" },
           { name: "spaCy" },
           { name: "Logistic Regression" },
-          { name: "Data Preprocessing" },
-          { name: "Model Evaluation" },
-          { name: "Data Visualization" }
+          { name: "TensorFlow / Keras" },
+          { name: "Scikit-learn" },
+          { name: "Pandas" },
+          { name: "NumPy" },
+          { name: "Data Preprocessing" }
         ]
       },
       {
         id: "web_frameworks",
-        title: "Web & Backend Frameworks",
+        title: "Web Development & Backend",
         icon: "web",
-        tag: "Web APIs",
-        summary: "Modern backend APIs, ML interfaces, and web application development.",
+        tag: "Full-Stack",
         skills: [
-          { name: "FastAPI" },
+          { name: "HTML5 & CSS3" },
+          { name: "JavaScript" },
           { name: "React" },
-          { name: "Streamlit" },
+          { name: "FastAPI" },
           { name: "Flask" },
-          { name: "HTML5 & CSS3" }
+          { name: "Streamlit" }
         ]
       },
       {
-        id: "database_tools",
-        title: "Databases & Storage",
-        icon: "database",
-        tag: "Data Layer",
-        summary: "Relational database schema modeling and query optimization.",
-        skills: [
-          { name: "SQLite" },
-          { name: "Relational DBMS" },
-          { name: "Parameterized SQL" }
-        ]
-      },
-      {
-        id: "concepts_soft",
-        title: "Tools & CS Foundations",
-        icon: "tools",
-        tag: "Ecosystem",
-        summary: "Development tools, version control, and computer science foundations.",
+        id: "tools_db",
+        title: "Tools & Databases",
+        icon: "tools_db",
+        tag: "DevOps & Data",
         skills: [
           { name: "Git & GitHub" },
           { name: "Docker" },
-          { name: "VS Code" },
-          { name: "Google Colab" },
-          { name: "Data Structures" },
-          { name: "Algorithms" }
+          { name: "SQLite" },
+          { name: "Figma" }
+        ]
+      },
+      {
+        id: "embedded_iot",
+        title: "Embedded & IoT",
+        icon: "embedded_iot",
+        tag: "Hardware & IoT",
+        skills: [
+          { name: "ESP32" },
+          { name: "SX1278 (LoRa)" },
+          { name: "Rain Sensor" },
+          { name: "Soil Moisture Sensor" },
+          { name: "DHT22" },
+          { name: "MPU6050" }
         ]
       }
     ],
     items: [
-      { name: "Python", category: "programming", badge: "Primary • Backend & ML" },
-      { name: "C", category: "programming", badge: "Core Systems & Algorithms" },
-      { name: "Java (Basics)", category: "programming", badge: "Oracle Certified" },
-      { name: "SQL", category: "programming", badge: "NPTEL Elite • Relational Queries" },
-      { name: "JavaScript", category: "programming", badge: "ES6+ Interactive Front-End" },
-      { name: "React", category: "web_frameworks", badge: "Live Dynamic Dashboard UI" },
-      { name: "FastAPI", category: "web_frameworks", badge: "Async REST & WebSockets" },
-      { name: "WebSockets", category: "web_frameworks", badge: "Real-Time Telemetry Stream" },
-      { name: "Streamlit", category: "web_frameworks", badge: "Interactive ML Dashboards" },
-      { name: "Flask", category: "web_frameworks", badge: "Application Routing" },
-      { name: "HTML5 & CSS3", category: "web_frameworks", badge: "Infosys Certified" },
-      { name: "Machine Learning", category: "ai_ml", badge: "Supervised & Unsupervised" },
-      { name: "BERT (Transformers)", category: "ai_ml", badge: "NLU Intent Classification" },
-      { name: "spaCy", category: "ai_ml", badge: "Tokenization & NLU" },
-      { name: "Logistic Regression", category: "ai_ml", badge: "Classification Engine" },
-      { name: "Active Learning", category: "ai_ml", badge: "Human-in-the-Loop Feedback" },
-      { name: "Data Preprocessing", category: "ai_ml", badge: "Feature Engineering" },
-      { name: "Model Evaluation", category: "ai_ml", badge: "F1 Score & Precision/Recall" },
-      { name: "SQLite", category: "database_tools", badge: "Embedded ACID Database" },
-      { name: "Relational DBMS", category: "database_tools", badge: "Schema Design & Normalization" },
-      { name: "Git & GitHub", category: "concepts_soft", badge: "Version Control" },
-      { name: "Docker", category: "concepts_soft", badge: "Compose & Containerization" },
-      { name: "Data Structures", category: "concepts_soft", badge: "Core CS Rigor" },
-      { name: "Algorithms", category: "concepts_soft", badge: "Complexity Optimization" }
+      { name: "Python", category: "programming", level: 92 },
+      { name: "C", category: "programming", level: 85 },
+      { name: "Java (Basics)", category: "programming", level: 80 },
+      { name: "SQL", category: "programming", level: 88 },
+      { name: "BERT", category: "ai_ml", level: 85 },
+      { name: "spaCy", category: "ai_ml", level: 86 },
+      { name: "Logistic Regression", category: "ai_ml", level: 88 },
+      { name: "TensorFlow / Keras", category: "ai_ml", level: 82 },
+      { name: "Scikit-learn", category: "ai_ml", level: 90 },
+      { name: "Pandas", category: "ai_ml", level: 92 },
+      { name: "NumPy", category: "ai_ml", level: 90 },
+      { name: "Data Preprocessing", category: "ai_ml", level: 92 },
+      { name: "HTML5 & CSS3", category: "web_frameworks", level: 90 },
+      { name: "JavaScript", category: "web_frameworks", level: 85 },
+      { name: "React", category: "web_frameworks", level: 82 },
+      { name: "FastAPI", category: "web_frameworks", level: 90 },
+      { name: "Flask", category: "web_frameworks", level: 84 },
+      { name: "Streamlit", category: "web_frameworks", level: 92 },
+      { name: "Git & GitHub", category: "tools_db", level: 90 },
+      { name: "Docker", category: "tools_db", level: 80 },
+      { name: "SQLite", category: "tools_db", level: 90 },
+      { name: "Figma", category: "tools_db", level: 85 },
+      { name: "ESP32", category: "embedded_iot", level: 88 },
+      { name: "SX1278 (LoRa)", category: "embedded_iot", level: 85 },
+      { name: "Rain Sensor", category: "embedded_iot", level: 82 },
+      { name: "Soil Moisture Sensor", category: "embedded_iot", level: 82 },
+      { name: "DHT22", category: "embedded_iot", level: 85 },
+      { name: "MPU6050", category: "embedded_iot", level: 84 }
     ]
   },
 
@@ -312,8 +303,7 @@ const PORTFOLIO_DATA = {
         { name: "Dataset 1 — Healthy vs DFU", count: "1,055 clinical foot images (512 DFU, 543 Healthy) evaluated with near-duplicate screening." },
         { name: "Dataset 2 — DFU Severity Classification", count: "10,016 images across Grade 1, Grade 2, Grade 3, and Grade 4 with group-aware splitting." }
       ],
-      challenges: "Balancing high-dimensional visual representations across disparate CNN backbones, handling clinical variability in skin tones and lesion geometry, and generating trustworthy multi-method Explainable AI maps (Grad-CAM, SHAP, and LIME) to assist preliminary medical evaluation.",
-      disclaimer: "Academic research prototype intended to support preliminary image-based assessment and clinical research; not intended to replace professional medical diagnosis."
+      challenges: "Balancing high-dimensional visual representations across disparate CNN backbones, handling clinical variability in skin tones and lesion geometry, and generating trustworthy multi-method Explainable AI maps (Grad-CAM, SHAP, and LIME) to assist preliminary medical evaluation."
     },
     {
       id: "infra_monitoring",
@@ -353,8 +343,7 @@ const PORTFOLIO_DATA = {
         "Resilient client-side WebSocket layer featuring automatic reconnection handling upon connection drops.",
         "Full Docker Compose containerization (`docker compose up`) orchestrating the backend and frontend services with single-command startup."
       ],
-      challenges: "Maintaining sub-second WebSocket telemetry streaming without UI thread freezing or client memory accumulation over time, implementing instant auto-reconnect resilience during connection drops, and containerizing both FastAPI and React into a lightweight single-command Docker Compose workflow.",
-      interviewSummary: "Our Real-Time Infrastructure Monitoring Platform is a full-stack DevOps telemetry application that streams live server metrics—CPU, RAM, disk usage, and system uptime—every second over WebSockets. Built with a FastAPI backend utilizing psutil and an interactive React frontend with live Recharts visualizations, the system alerts administrators whenever resource thresholds are breached and features single-command deployment via Docker Compose."
+      challenges: "Maintaining sub-second WebSocket telemetry streaming without UI thread freezing or client memory accumulation over time, implementing instant auto-reconnect resilience during connection drops, and containerizing both FastAPI and React into a lightweight single-command Docker Compose workflow."
     },
     {
       id: "geosentinel",
@@ -401,7 +390,7 @@ const PORTFOLIO_DATA = {
           src: "assets/videos/bot-trainer-admin.mp4"
         }
       ],
-      badges: ["NLP / NLU Platform", "Active Learning Loop", "Dual Portals (User & Admin)"],
+      badges: ["NLU Platform", "Active Learning Loop", "Dual Portals (User & Admin)"],
       tech: ["Python", "FastAPI", "Streamlit", "BERT", "spaCy", "Scikit-Learn", "SQLite"],
       github: "https://github.com/sonarosedevasia",
       description: "Bot Trainer is an end-to-end Natural Language Understanding (NLU) platform engineered for developing, training, and diagnostically evaluating conversational AI models. It streamlines the lifecycle of conversational AI by combining dataset annotation, multi-algorithm training (spaCy, BERT, and Logistic Regression), and an active learning feedback loop that surfaces low-confidence predictions for human review and iterative model retraining.",
@@ -428,8 +417,7 @@ const PORTFOLIO_DATA = {
         "Continuous Active Learning Loop: Low-confidence runtime predictions automatically queued for human annotation and incremental model fine-tuning.",
         "Relational Metadata Storage: SQLite database archiving intent datasets, model checkpoint metrics, and reviewed query histories."
       ],
-      challenges: "Engineering an active learning queue that surfaces uncertain predictions without overwhelming reviewers, balancing computational latency between deep BERT embeddings and lightweight linear classifiers for real-time inference, and designing clear diagnostic visualizations for multi-class intent confusion.",
-      interviewSummary: "Bot Trainer is an end-to-end NLU platform developed with Python, FastAPI, Streamlit, spaCy, and BERT that empowers engineers to annotate conversational datasets, train multiple NLP models side-by-side, and continuously improve bot performance through an active learning feedback loop. The project features dedicated user and admin portals and provides deep diagnostic benchmarking with confusion matrices and F1 score tracking."
+      challenges: "Engineering an active learning queue that surfaces uncertain predictions without overwhelming reviewers, balancing computational latency between deep BERT embeddings and lightweight linear classifiers for real-time inference, and designing clear diagnostic visualizations for multi-class intent confusion."
     },
     {
       id: "nutrition_assistant",
@@ -481,8 +469,7 @@ const PORTFOLIO_DATA = {
         "Orders Table: Confirmed orders, customer details, line items, timestamps, and order statuses.",
         "Nutrition Information Table: Detailed nutritional metrics per item (proteins, carbs, vitamins, minerals, fiber, healthy fats)."
       ],
-      challenges: "Designing an efficient relational database schema connecting products to comprehensive nutritional profiles, implementing the real-time nutrient aggregation algorithm across multi-item shopping carts, managing concurrent user shopping sessions and cart state in Flask, and maintaining distinct role permissions for user shopping vs. admin inventory management.",
-      interviewSummary: "Our project is an Online Grocery Store integrated with a Nutrition Recommendation System. Users can register, browse products, add items to their cart, and place orders. The unique feature of the project is that it analyzes the nutritional content of the shopping cart, identifies missing nutrients, and recommends suitable grocery items to create a more balanced diet. The application was developed using HTML, CSS, JavaScript, Flask, and SQLite, and helped us gain practical experience in full-stack web development, database management, and recommendation systems."
+      challenges: "Designing an efficient relational database schema connecting products to comprehensive nutritional profiles, implementing the real-time nutrient aggregation algorithm across multi-item shopping carts, managing concurrent user shopping sessions and cart state in Flask, and maintaining distinct role permissions for user shopping vs. admin inventory management."
     },
     {
       id: "blood_bank",
@@ -523,8 +510,7 @@ const PORTFOLIO_DATA = {
         "Optimized SQL Queries: Parameterized multi-attribute queries delivering sub-5ms lookup speeds while preventing SQL injection vulnerabilities.",
         "Emergency Donor Triage: Filter algorithms that match compatible recipient-donor blood groups instantly during urgent clinical requests."
       ],
-      challenges: "Designing parameterized SQL queries that prevent SQL injection while executing sub-5ms multi-attribute searches during emergency lookups, enforcing strict blood group validation rules to prevent clinical input errors, and ensuring mobile responsiveness for on-call medical coordinators.",
-      interviewSummary: "Our Blood Bank Management System is a full-stack healthcare web application developed using Python, Flask, SQLite, and vanilla frontend technologies. It replaces manual paperwork with a centralized digital donor registry that executes sub-5ms parameterized SQL searches across blood groups, manages real-time blood inventory, and accelerates donor coordination during critical medical emergencies."
+      challenges: "Designing parameterized SQL queries that prevent SQL injection while executing sub-5ms multi-attribute searches during emergency lookups, enforcing strict blood group validation rules to prevent clinical input errors, and ensuring mobile responsiveness for on-call medical coordinators."
     },
     {
       id: "book_tracker",
@@ -562,8 +548,7 @@ const PORTFOLIO_DATA = {
         "Dynamic DOM manipulation rendering books in reverse chronological order (newest first) with interactive reading status dropdowns and instant deletion.",
         "Mobile-first responsive interface crafted with semantic HTML5 and custom CSS, deployed and hosted live on GitHub Pages."
       ],
-      challenges: "Maintaining synchronization between in-memory book state, live DOM views, and browser localStorage while keeping instant search filtering and dynamic reading statistics reactive across both desktop and mobile viewports.",
-      interviewSummary: "Book Tracker is a responsive client-side web application developed with HTML5, CSS3, and Vanilla JavaScript for organizing personal libraries. It features instant search, real-time reading progress analytics, and persistent client-side data storage using browser localStorage. The project was built with a mobile-first approach and is deployed live on GitHub Pages."
+      challenges: "Maintaining synchronization between in-memory book state, live DOM views, and browser localStorage while keeping instant search filtering and dynamic reading statistics reactive across both desktop and mobile viewports."
     }
   ],
 

@@ -300,7 +300,7 @@ class SonaTerminal {
         _nnnn_                      <span style="color:#34d399; font-weight:bold;">sona@engineering-workstation</span>
        dGGGGMMb                     -----------------------------
       @p~qp~~qMb                    <span style="color:#38bdf8;">OS:</span> Linux x86_64 / Windows
-      M|@||@) M|                    <span style="color:#38bdf8;">College:</span> Amal Jyothi College of Engg (Autonomous)
+      M|@||@) M|                    <span style="color:#38bdf8;">College:</span> Amal Jyothi College of Engineering (Autonomous)
       @,----.JM|                    <span style="color:#38bdf8;">Degree:</span> B.Tech Computer Science (2023 - 2027)
      JS^\\__/  qKL                   <span style="color:#38bdf8;">Location:</span> Kanjirappally, Kerala
     dZP        qKRb                 <span style="color:#38bdf8;">Shell:</span> bash / zsh

@@ -267,31 +267,6 @@ class ProjectModalManager {
       `;
     }
 
-    let interviewHtml = '';
-    if (project.interviewSummary) {
-      interviewHtml = `
-        <div style="margin-top: 1.75rem; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); padding: 1.25rem; border-radius: 10px;">
-          <h4 style="font-size: 0.95rem; font-weight: 700; color: #10b981; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem;">
-            <span>⚡</span> 30-Second Interview / Viva Summary
-          </h4>
-          <blockquote style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.65; margin: 0; font-style: italic;">
-            "${project.interviewSummary}"
-          </blockquote>
-        </div>
-      `;
-    }
-
-    let disclaimerHtml = '';
-    if (project.disclaimer) {
-      disclaimerHtml = `
-        <div style="margin-top: 1.5rem; background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.3); padding: 0.95rem 1.25rem; border-radius: 8px;">
-          <p style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.55; margin: 0;">
-            ⚠️ <strong>Medical Research Disclaimer:</strong> ${project.disclaimer}
-          </p>
-        </div>
-      `;
-    }
-
     this.modalContent.innerHTML = `
       <div style="margin-bottom: 1.5rem;">
         <h2 style="font-size: 1.75rem; margin-bottom: 0.4rem; color: var(--text-heading);">${project.title}</h2>
@@ -316,8 +291,6 @@ class ProjectModalManager {
       ${xaiHtml}
       ${datasetsHtml}
       ${challengeHtml}
-      ${interviewHtml}
-      ${disclaimerHtml}
 
       <div style="margin-top: 1.75rem;">
         <h5 style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Technology Stack</h5>

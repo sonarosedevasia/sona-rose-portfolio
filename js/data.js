@@ -24,7 +24,7 @@ const PORTFOLIO_DATA = {
     stats: [
       { label: "B.Tech CGPA", value: "9.28", subtext: "Amal Jyothi College of Engineering" },
       { label: "Internships Completed", value: "2", subtext: "NeST Digital & Infosys" },
-      { label: "Projects", value: "7", subtext: "Full-Stack, DevOps & AI" },
+      { label: "Projects", value: "8", subtext: "Full-Stack, DevOps & AI" },
       { label: "Certifications", value: "4", subtext: "IBM, NPTEL Elite, Oracle, Infosys" }
     ],
     bio: [
@@ -549,6 +549,48 @@ const PORTFOLIO_DATA = {
         "Mobile-first responsive interface crafted with semantic HTML5 and custom CSS, deployed and hosted live on GitHub Pages."
       ],
       challenges: "Maintaining synchronization between in-memory book state, live DOM views, and browser localStorage while keeping instant search filtering and dynamic reading statistics reactive across both desktop and mobile viewports."
+    },
+    {
+      id: "disastersafe",
+      featured: true,
+      category: "fullstack",
+      title: "DisasterSafe — Multi-Hazard Disaster Safety Assistant",
+      tagline: "Rule-based, multilingual chatbot that guides citizens through floods, earthquakes and landslides using decision-tree logic and NDMA/KSDMA safety guidance.",
+      image: "assets/images/project-disastersafe.svg",
+      video: "assets/videos/disaster_chatbot.mp4",
+      altVideo: "PROJECT VIDEOS/disaster_chatbot/disaster_chatbot.mp4",
+      badges: ["Rule-Based Chatbot", "Decision-Tree Engine", "Multilingual (EN/ML/HI)", "Live on Vercel"],
+      tech: ["Python", "Flask", "JavaScript", "HTML5", "CSS3", "JSON", "Pytest", "Mermaid.js", "Docker", "Vercel"],
+      github: "https://github.com/sonarosedevasia",
+      demo: "https://disaster-chatbot-seven.vercel.app/",
+      description: "DisasterSafe is a web-based disaster safety assistant that guides a citizen through the right actions during a flood, earthquake or landslide. It asks short situation questions (for example, \"Are you indoors or outdoors?\") and branches into different safety instructions based on the answers, ending with a personalized safety checklist and emergency helpline numbers. All guidance is drawn from NDMA and KSDMA recommendations. The chatbot is fully rule-based, with no AI model, paid API or database, so identical answers always produce identical, predictable advice. The chatbot works in English, Malayalam and Hindi, and the site also includes a decision-tree flowchart viewer, an emergency kit checklist and a safety quiz.",
+      problemStatement: "During floods, earthquakes and landslides, people under stress often do not know the correct immediate actions, and unverified advice spreads quickly. Official guidelines exist but are long documents that are hard to follow in the moment, especially for people with low digital literacy or who do not read English.",
+      objectives: [
+        "Guide users through hazard-specific safety actions using clear step-by-step questions and clickable options.",
+        "Implement decision-tree logic with multiple branches (indoors, outdoors, vehicle, and more) for Flood, Earthquake and Landslide.",
+        "Generate a personalized safety checklist at the end, with the most urgent actions first, based on the user's exact answers.",
+        "Base every instruction on official NDMA and KSDMA guidance, with sources shown to the user.",
+        "Support English, Malayalam and Hindi in the chatbot.",
+        "Keep emergency numbers (112, 1070, 1077) visible on every page.",
+        "Deliver a responsive, accessible interface deployed live on Vercel."
+      ],
+      modules: [
+        { name: "Decision-Tree Engine", desc: "Loads each hazard as a JSON tree of question, advice and summary nodes, and moves the user through branches based on their answers." },
+        { name: "Tree Validator", desc: "Checks every tree before startup for dead ends, unreachable nodes, cycles and missing source references." },
+        { name: "Session Manager with Back/Undo", desc: "Tracks each user's path and answers in memory, with a Back button that restores the previous step." },
+        { name: "Rule-Based Text Matcher", desc: "Maps typed free text to the closest option using Levenshtein distance and synonyms, with no external NLP service." },
+        { name: "Personalized Summary Generator", desc: "Collects tags along the user's path and builds a prioritized checklist: immediate actions, next steps, preparation and communication." },
+        { name: "Flowchart Generator", desc: "Generates Mermaid flowcharts directly from the same JSON trees, so the diagram always matches the chatbot's real logic." }
+      ],
+      architecture: [
+        "Python Flask backend exposing a REST API (start, answer, back, restart, summary) over a data-driven decision-tree engine.",
+        "Decision trees stored as JSON files, one per hazard, with English, Malayalam and Hindi text on every node and a source reference on every piece of advice.",
+        "Vanilla JavaScript frontend with chat bubbles, typing indicator, option buttons, progress indicator and a Restart button.",
+        "Flowcharts and sample transcripts auto-generated from the real engine, so documentation cannot drift from the code.",
+        "Automated pytest suite (33 tests) covering exhaustive path traversal (90 paths across 50 nodes), five explicit conversation paths, and safety regression checks such as never advising anyone to walk, swim or drive through floodwater.",
+        "Responsive interface with dark/light theme, adjustable font size, high-contrast mode, installable web app (PWA) and Docker packaging."
+      ],
+      challenges: "Keeping safety guidance accurate and consistent by making the decision tree the single source of truth: the chatbot, the validator, the flowcharts, the sample transcripts and the tests all read from the same JSON files, so a change in one place is reflected everywhere and dead-end conversations or unsafe advice are caught automatically."
     }
   ],
 

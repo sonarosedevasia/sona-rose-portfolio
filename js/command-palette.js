@@ -38,6 +38,7 @@ class CommandPalette {
       { title: 'View Project: Nutrition Assistant Grocery Store', category: 'Projects', icon: '🥗', action: () => window.openProjectModal('nutrition_assistant') },
       { title: 'View Project: Blood Bank Management System', category: 'Projects', icon: '🩸', action: () => window.openProjectModal('blood_bank') },
       { title: 'View Project: Book Tracker — Personal Library & Reading Manager', category: 'Projects', icon: '📚', action: () => window.openProjectModal('book_tracker') },
+      { title: 'View Project: DisasterSafe — Multi-Hazard Disaster Safety Assistant', category: 'Projects', icon: '🛡️', action: () => window.openProjectModal('disastersafe') },
 
       // Hackathons & Certificates direct jump
       { title: 'View Certificate: Smart India Hackathon 2025', category: 'Hackathons', icon: '🏆', action: () => window.openCertificateModal('assets/images/hackathons/smart-india-hackathon-2025.png', 'Smart India Hackathon 2025', 'National Hackathon') },

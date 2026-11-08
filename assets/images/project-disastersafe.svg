@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360">
+  <defs>
+    <linearGradient id="disasterBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EF4444" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="600" height="360" fill="url(#disasterBg)" rx="12" />
+
+  <!-- Subtle Blueprint Grid -->
+  <g opacity="0.06" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="60" x2="600" y2="60" />
+    <line x1="0" y1="120" x2="600" y2="120" />
+    <line x1="0" y1="180" x2="600" y2="180" />
+    <line x1="0" y1="240" x2="600" y2="240" />
+    <line x1="0" y1="300" x2="600" y2="300" />
+    <line x1="120" y1="0" x2="120" y2="360" />
+    <line x1="240" y1="0" x2="240" y2="360" />
+    <line x1="360" y1="0" x2="360" y2="360" />
+    <line x1="480" y1="0" x2="480" y2="360" />
+  </g>
+
+  <!-- Main Application Window -->
+  <rect x="30" y="24" width="540" height="312" rx="10" fill="#0B1120" stroke="rgba(56, 189, 248, 0.25)" stroke-width="1.5" />
+
+  <!-- Window Header Bar -->
+  <rect x="30" y="24" width="540" height="40" rx="10" fill="#090E17" />
+  <circle cx="52" cy="44" r="5" fill="#EF4444" />
+  <circle cx="68" cy="44" r="5" fill="#F59E0B" />
+  <circle cx="84" cy="44" r="5" fill="#10B981" />
+  <text x="108" y="48" fill="#F8FAFC" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700">🛡️ DisasterSafe — Multi-Hazard Safety Assistant</text>
+  <rect x="424" y="34" width="132" height="20" rx="4" fill="rgba(239, 68, 68, 0.2)" stroke="rgba(239, 68, 68, 0.4)" stroke-width="0.8" />
+  <text x="432" y="48" fill="#FCA5A5" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="600">🚨 112 • 1070 • 1077</text>
+
+  <!-- Left Column: Hazard Selector & Flowchart Engine -->
+  <g transform="translate(48, 76)">
+    <!-- Hazard Selection Card -->
+    <rect x="0" y="0" width="176" height="136" rx="8" fill="#131C31" stroke="rgba(255,255,255,0.08)" />
+    <text x="14" y="22" fill="#F8FAFC" font-family="sans-serif" font-size="11" font-weight="700">⚡ Active Hazards</text>
+    
+    <!-- Hazard 1: Flood -->
+    <rect x="12" y="32" width="152" height="26" rx="5" fill="rgba(56, 189, 248, 0.15)" stroke="rgba(56, 189, 248, 0.4)" />
+    <text x="22" y="49" fill="#38BDF8" font-family="sans-serif" font-size="10" font-weight="600">🌊 Flood Safety Protocol</text>
+
+    <!-- Hazard 2: Earthquake -->
+    <rect x="12" y="64" width="152" height="26" rx="5" fill="#0B1324" stroke="rgba(255,255,255,0.06)" />
+    <text x="22" y="81" fill="#94A3B8" font-family="sans-serif" font-size="10">🏚️ Earthquake Action</text>
+
+    <!-- Hazard 3: Landslide -->
+    <rect x="12" y="96" width="152" height="26" rx="5" fill="#0B1324" stroke="rgba(255,255,255,0.06)" />
+    <text x="22" y="113" fill="#94A3B8" font-family="sans-serif" font-size="10">⛰️ Landslide Early Warning</text>
+
+    <!-- Decision Tree Logic Box -->
+    <rect x="0" y="146" width="176" height="96" rx="8" fill="#131C31" stroke="rgba(255,255,255,0.08)" />
+    <text x="14" y="168" fill="#F8FAFC" font-family="sans-serif" font-size="11" font-weight="700">🌳 Decision Tree Engine</text>
+    <g transform="translate(14, 182)" font-family="'JetBrains Mono', monospace" font-size="8.5">
+      <text x="0" y="12" fill="#38BDF8">▸ 90 Traversal Paths</text>
+      <text x="0" y="28" fill="#10B981">▸ 50 Decision Nodes</text>
+      <text x="0" y="44" fill="#F59E0B">▸ NDMA / KSDMA Verified</text>
+    </g>
+  </g>
+
+  <!-- Right Column: Interactive Chat Interface -->
+  <g transform="translate(238, 76)">
+    <!-- Chat Header Bar -->
+    <rect x="0" y="0" width="318" height="28" rx="6" fill="#131C31" stroke="rgba(255,255,255,0.08)" />
+    <text x="12" y="18" fill="#94A3B8" font-family="sans-serif" font-size="10">Languages: <tspan fill="#38BDF8" font-weight="700">English</tspan> • <tspan fill="#F8FAFC">മലയാളം</tspan> • <tspan fill="#F8FAFC">हिन्दी</tspan></text>
+    <rect x="236" y="5" width="72" height="18" rx="4" fill="rgba(16, 185, 129, 0.2)" />
+    <text x="246" y="17" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="600">NDMA / KSDMA</text>
+
+    <!-- Chat Message 1: Bot Question -->
+    <rect x="0" y="38" width="270" height="42" rx="8" fill="#1E293B" stroke="rgba(56, 189, 248, 0.2)" />
+    <text x="12" y="55" fill="#38BDF8" font-family="sans-serif" font-size="9.5" font-weight="700">🤖 DisasterSafe Assistant</text>
+    <text x="12" y="71" fill="#E2E8F0" font-family="sans-serif" font-size="9">Where are you currently located during this flood?</text>
+
+    <!-- User Options -->
+    <g transform="translate(14, 88)">
+      <rect x="0" y="0" width="84" height="22" rx="11" fill="url(#blueGrad)" />
+      <text x="12" y="14" fill="#FFFFFF" font-family="sans-serif" font-size="9" font-weight="600">🏠 Indoors</text>
+
+      <rect x="92" y="0" width="88" height="22" rx="11" fill="#1E293B" stroke="rgba(255,255,255,0.15)" />
+      <text x="104" y="14" fill="#E2E8F0" font-family="sans-serif" font-size="9">🌳 Outdoors</text>
+
+      <rect x="188" y="0" width="84" height="22" rx="11" fill="#1E293B" stroke="rgba(255,255,255,0.15)" />
+      <text x="202" y="14" fill="#E2E8F0" font-family="sans-serif" font-size="9">🚗 In Vehicle</text>
+    </g>
+
+    <!-- Chat Message 2: Guided Instruction -->
+    <rect x="0" y="120" width="318" height="64" rx="8" fill="#1E293B" stroke="rgba(239, 68, 68, 0.3)" />
+    <text x="12" y="137" fill="#F87171" font-family="sans-serif" font-size="9.5" font-weight="700">⚠️ Immediate Safety Action (NDMA Guideline)</text>
+    <text x="12" y="153" fill="#F8FAFC" font-family="sans-serif" font-size="9">Move immediately to the top floor or roof. Turn off main electrical switches.</text>
+    <text x="12" y="169" fill="#FCA5A5" font-family="'JetBrains Mono', monospace" font-size="8.5">⚠️ NEVER attempt to walk, swim, or drive through floodwater!</text>
+
+    <!-- Checklist & Progress Bar -->
+    <g transform="translate(0, 196)">
+      <rect x="0" y="0" width="318" height="46" rx="6" fill="#10192A" stroke="rgba(16, 185, 129, 0.25)" />
+      <text x="12" y="18" fill="#34D399" font-family="sans-serif" font-size="9.5" font-weight="700">✓ Personalized Emergency Checklist Generated</text>
+      <text x="12" y="34" fill="#94A3B8" font-family="sans-serif" font-size="8.5">Emergency Bag (Water, Torch, First Aid, Documents) • Helplines Ready</text>
+    </g>
+  </g>
+
+  <!-- Bottom Bar: Deployment & Status -->
+  <g transform="translate(48, 320)" font-family="'JetBrains Mono', monospace" font-size="9.5">
+    <circle cx="4" cy="-3" r="3.5" fill="#10B981" />
+    <text x="14" y="0" fill="#34D399">Decision Tree Engine • 100% Deterministic Rule-Based Advice</text>
+    <text x="365" y="0" fill="#38BDF8">Deployed Live on Vercel</text>
+  </g>
+</svg>
+
